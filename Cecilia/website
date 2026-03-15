@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cecilia | Graphic Design & Photography</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Cecilia</h1>
+    <p>Graphic Designer & Photographer</p>
+</header>
+
+<nav>
+    <a href="#design">Graphic Design</a>
+    <a href="#photo">Photography</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="design">
+    <h2>Graphic Design</h2>
+
+    <div class="gallery">
+        <img src="images/design1.jpg">
+        <img src="images/design2.jpg">
+    </div>
+</section>
+
+<section id="photo">
+    <h2>Photography</h2>
+
+    <div class="gallery">
+        <img src="images/photo1.jpg">
+        <img src="images/photo2.jpg">
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I create visual designs and photography projects. My work focuses on
+        creativity, storytelling, and visual aesthetics.
+    </p>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: your@email.com</p>
+</section>
+
+<footer>
+    <p>© 2026 Cecilia</p>
+</footer>
+
+</body>
+</html>
