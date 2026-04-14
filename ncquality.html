@@ -5,7 +5,22 @@
 </head>
 
 <body>
+<script>
+  document.querySelectorAll(".folder").forEach(folder => {
+    folder.addEventListener("click", function (e) {
+      e.preventDefault(); // stop instant navigation
 
+      const item = this.closest(".item");
+      item.classList.add("opening");
+
+      const link = this.href;
+
+      setTimeout(() => {
+        window.location.href = link;
+      }, 400); // must match animation time
+    });
+  });
+</script>
 <header>
     <h1>NC QUALITY</h1>
 </header>
