@@ -1,1 +1,10 @@
+.moodboard {
+  column-count: 3;
+  column-gap: 12px;
+}
 
+.moodboard img {
+  width: 100%;
+  margin-bottom: 12px;
+  border-radius: 12px;
+}
