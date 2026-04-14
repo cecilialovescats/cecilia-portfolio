@@ -27,9 +27,9 @@ body {
 .grid {
   display: flex;
   justify-content: center;
-  gap: 60px;
+  gap: 100px;
   flex-wrap: wrap; 
-  padding: 80px;
+  padding: 100px;
 }
 
 .item {
