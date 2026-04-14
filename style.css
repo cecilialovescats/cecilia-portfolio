@@ -25,20 +25,18 @@ body {
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 40px;
-  justify-items: center;
-  align-items: center;
-  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap; 
+  padding: 80px;
 }
 
 .item {
   text-align: center;
   cursor: pointer;
+  width: 140px; 
 }
-
-
 .icon {
   width: 120px;
   height: auto;
