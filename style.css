@@ -8,3 +8,38 @@
   margin-bottom: 12px;
   border-radius: 12px;
 }
+body {
+  margin: 0;
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  justify-items: center;
+  align-items: center;
+  padding: 80px;
+}
+
+.item {
+  text-align: center;
+  cursor: pointer;
+}
+
+.icon {
+  width: 120px;
+  height: auto;
+  transition: transform 0.2s;
+}
+
+.item:hover .icon {
+  transform: scale(1.05);
+}
+
+p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
