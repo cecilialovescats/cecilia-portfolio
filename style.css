@@ -78,3 +78,21 @@ body {
     width: 100px;
   }
 }
+@keyframes folderOpen {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15) translateY(-10px);
+  }
+  100% {
+    transform: scale(0.9) translateY(-20px);
+    opacity: 0;
+  }
+}
+
+.item.opening {
+  animation: folderOpen 0.4s ease forwards;
+  pointer-events: none;
+}
