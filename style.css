@@ -91,6 +91,10 @@ body {
     opacity: 0;
   }
 }
+@font-face {
+  font-family: 'MyFont';
+  src: url('Cecilia-Regular.ttf') format('truetype');
+}
 
 .item.opening {
   animation: folderOpen 0.4s ease forwards;
