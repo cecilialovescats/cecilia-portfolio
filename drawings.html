@@ -3,56 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Drawings/title>
+  <title>Drawings</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="flipbook">
     <div class="hard">Doodles Magazine<small>Cecilia</small></div>
-    <div> 
-      <img src="" alt=""/>
-      <small>bee?</small>
-    </div> 
-    <div> 
-      <img src="" alt=""/>
-      <small>bee?</small>
-    </div> 
-    <div> 
-      <img src="" alt=""/>
-      <small>bee?</small>
-    </div> 
-    <div> 
-      <img src="" alt=""/>
-      <small>bee?</small>
-    </div> 
-    <div> 
-      <img src="" alt=""/>
-      <small>bee?</small>
-    </div> 
-    <div> 
-      <img src="" alt=""/>
-      <small>bee?</small>
-    </div> 
-    <div> 
-      <img src="" alt=""/>
-      <small>bee?</small>
-    </div> 
-    <div> 
-      <img src="" alt=""/>
-      <small>bee?</small>
-    </div> 
-    <div> 
-      <img src="" alt=""/>
-      <small>bee?</small>
-    </div> 
-    
+
+    <div><img src="images/bee1.jpg" alt=""/><small>bee?</small></div>
+    <div><img src="images/bee2.jpg" alt=""/><small>bee?</small></div>
+
     <div class="hard">thank u<small> yours truly, Cecilia</small></div>
-<script src="turn.js"></script>
-<script src="jquert-4.0.0.min.js"></script>
-    <script>
+  </div>
+
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="turn.js"></script>
+  <script>
+    $(document).ready(function() {
       $(".flipbook").turn();
-    </script>
-    
+    });
+  </script>
 </body>
 </html>
