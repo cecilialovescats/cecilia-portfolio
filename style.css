@@ -1,151 +1,152 @@
-* {
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Doodles Magazine</title>
 
-@font-face {
-  font-family: 'Cecilia-Regular';
-  src: url('Cecilia-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  background: #f5f5f5;
-  font-family: 'Cecilia-Regular' !important;
-  color: #333;
-}
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
 
-
-.moodboard {
-  column-count: 3;
-  column-gap: 12px;
-  padding: 20px;
-}
-
-.moodboard img {
-  width: 100%;
-  margin-bottom: 12px;
-  border-radius: 12px;
-  display: block;
-  break-inside: avoid;
-}
-
-/* GRID */
-.grid {
-  display: flex;
-  justify-content: center;
-  gap: 120px;
-  flex-wrap: wrap;
-  padding: 100px;
-}
-
-.item {
-  text-align: center;
-  cursor: pointer;
-  width: 120px;
-}
-
-.icon {
-  width: 100px;
-  height: auto;
-  transition: transform 0.25s ease;
-  will-change: transform;
-}
-
-.item:hover .icon {
-  transform: scale(1.05);
-}
-
-.item p {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #9DC183;
-  letter-spacing: 0.3px;
-}
+    .flipbook {
+      width: 900px;
+      height: 650px;
+    }
 
 
-@keyframes folderOpen {
-  0% { transform: scale(1) translateY(0); opacity: 1; }
-  50% { transform: scale(1.15) translateY(-10px); }
-  100% { transform: scale(0.9) translateY(-20px); opacity: 0; }
-}
-
-.item.opening {
-  animation: folderOpen 0.4s ease-in-out forwards;
-  pointer-events: none;
-}
-
-.flipbook {
-  width: 800px;
-  height: 600px;
-  margin: 50px auto;
-}
-
-.flipbook > div {
-  width: 800px;
-  height: 600px;
-  position: relative;
-  overflow: hidden;
-  background: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.flipbook .hard {
-  background: #AFE1AF;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.page-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.flipbook img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover
-}
-
-.flipbook small {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
+    .flipbook > div {
+      width: 900px;
+      height: 650px;
+      position: relative;
+      overflow: hidden;
+      background: black;
+    }
 
 
-@media (max-width: 900px) {
-  .moodboard {
-    column-count: 2;
-  }
+    .flipbook img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-  .grid {
-    gap: 30px;
-    padding: 40px 20px;
-  }
-}
 
-@media (max-width: 600px) {
-  .moodboard {
-    column-count: 1;
-  }
+    .caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      color: white;
+      font-size: 16px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 10px 14px;
+      border-radius: 8px;
+    }
 
-  .grid {
-    gap: 20px;
-    padding: 20px;
-  }
+ 
+    .hard {
+      background: #AFE1AF;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: #222;
+    }
 
-  .item {
-    width: 80px;
-  }
+    .hard small {
+      font-size: 14px;
+      margin-top: 10px;
+      font-weight: normal;
+    }
 
-  .icon {
-    width: 60px;
-  }
-}
+  </style>
+</head>
+
+<body>
+
+<div class="flipbook">
+
+ 
+  <div class="hard">
+    Doodles Magazine
+    <small>Cecilia</small>
+  </div>
+
+ 
+  <div>
+    <img src="images/bee.png">
+    <div class="caption">bee?</div>
+  </div>
+
+  <div>
+    <img src="images/Screenshot_22-4-2026_94811_.jpeg">
+    <div class="caption">butterfly dancing</div>
+  </div>
+
+  <div>
+    <img src="images/Screenshot_22-4-2026_94926_.jpeg">
+    <div class="caption">dream vacation</div>
+  </div>
+
+  <div>
+    <img src="images/Screenshot_22-4-2026_95047_.jpeg">
+    <div class="caption">ocean sideway</div>
+  </div>
+
+  <div>
+    <img src="images/Screenshot_22-4-2026_9506_.jpeg">
+    <div class="caption">blossom</div>
+  </div>
+
+  <div>
+    <img src="images/Screenshot_22-4-2026_9511_.jpeg">
+    <div class="caption">bamboo</div>
+  </div>
+
+  <div>
+    <img src="images/Screenshot_22-4-2026_95124_.jpeg">
+    <div class="caption">at sea</div>
+  </div>
+
+  <div>
+    <img src="images/Screenshot_22-4-2026_95142_.jpeg">
+    <div class="caption">why does everything die</div>
+  </div>
+
+  <!-- BACK COVER -->
+  <div class="hard">
+    thank you
+    <small>yours truly, Cecilia</small>
+  </div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="turn.js"></script>
+
+<script>
+  $(".flipbook").turn({
+    width: 900,
+    height: 650,
+    autoCenter: true,
+    gradients: true,
+    acceleration: true
+  });
+</script>
+
+</body>
+</html>
