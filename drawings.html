@@ -5,49 +5,71 @@
   <title>Doodles Magazine</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
+      margin: 0;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       background: #f5f5f5;
-      margin: 0;
       font-family: Arial, sans-serif;
     }
 
+  
     .flipbook {
-      width: 400px;
-      height: 300px;
+      width: 900px;
+      height: 650px;
     }
 
     .flipbook > div {
-      width: 400px;
-      height: 300px;
+      width: 900px;
+      height: 650px;
+      position: relative;
+      overflow: hidden;
+      background: black;
+    }
+
+
+    .flipbook img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      color: white;
+      font-size: 16px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 10px 14px;
+      border-radius: 8px;
+    }
+
+    .hard {
+      background: #AFE1AF;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: white;
-      border: 1px solid #ddd;
-      overflow: hidden;
-    }
-
-    .flipbook img {
-      max-width: 80%;
-      max-height: 70%;
-      object-fit: contain;
-    }
-
-    small {
-      margin-top: 10px;
-      color: #555;
-    }
-
-    .hard {
+      font-size: 28px;
       font-weight: bold;
-      font-size: 20px;
-      background: #eaeaea;
+      color: #222;
     }
+
+    .hard small {
+      font-size: 14px;
+      margin-top: 10px;
+      font-weight: normal;
+    }
+
   </style>
 </head>
 
@@ -56,52 +78,53 @@
 <div class="flipbook">
 
   <div class="hard">
-    Doodles Magazine<br>
+    Doodles Magazine
     <small>Cecilia</small>
   </div>
 
+
   <div>
     <img src="images/bee.png">
-    <small>bee?</small>
+    <div class="caption">bee?</div>
   </div>
 
   <div>
     <img src="images/Screenshot_22-4-2026_94811_.jpeg">
-    <small>butterfly dancing</small>
+    <div class="caption">butterfly dancing</div>
   </div>
 
   <div>
     <img src="images/Screenshot_22-4-2026_94926_.jpeg">
-    <small>dream vacation</small>
+    <div class="caption">dream vacation</div>
   </div>
 
   <div>
     <img src="images/Screenshot_22-4-2026_95047_.jpeg">
-    <small>ocean sideway</small>
+    <div class="caption">ocean sideway</div>
   </div>
 
   <div>
     <img src="images/Screenshot_22-4-2026_9506_.jpeg">
-    <small>blossom</small>
+    <div class="caption">blossom</div>
   </div>
 
   <div>
     <img src="images/Screenshot_22-4-2026_9511_.jpeg">
-    <small>bamboo</small>
+    <div class="caption">bamboo</div>
   </div>
 
   <div>
     <img src="images/Screenshot_22-4-2026_95124_.jpeg">
-    <small>at sea</small>
+    <div class="caption">at sea</div>
   </div>
 
   <div>
     <img src="images/Screenshot_22-4-2026_95142_.jpeg">
-    <small>why does everything die</small>
+    <div class="caption">why does everything die</div>
   </div>
 
   <div class="hard">
-    thank u<br>
+    thank you
     <small>yours truly, Cecilia</small>
   </div>
 
@@ -111,13 +134,13 @@
 <script src="turn.js"></script>
 
 <script>
-$(".flipbook").turn({
-  width: 800,
-  height: 600,
-  autoCenter: true,
-  gradients: true,
-  acceleration: true
-});
+  $(".flipbook").turn({
+    width: 900,
+    height: 650,
+    autoCenter: true,
+    gradients: true,
+    acceleration: true
+  });
 </script>
 
 </body>
