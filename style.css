@@ -124,27 +124,17 @@ body {
   margin: 50px auto;
 }
 
+.flipbook > div {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .flipbook .hard {
   background: #AFE1AF;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.flipbook div {
-  background: white;
-  gap: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.flipbook img {
-  max-width: 70%;
-}
-
-.flipbook small {
-  font-size: 14px;
-  margin-bottom: 10px;
 }
 
 .page-content {
@@ -158,6 +148,11 @@ body {
 .flipbook img {
   max-width: 80%;
   max-height: 70%;
+}
+
+.flipbook small {
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
 
