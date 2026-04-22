@@ -1,8 +1,6 @@
-
 * {
   box-sizing: border-box;
 }
-
 
 @font-face {
   font-family: 'Cecilia-Regular';
@@ -12,11 +10,10 @@
   font-display: swap;
 }
 
-
 body {
   margin: 0;
   background: #f5f5f5;
-  font-family: 'Cecilia-Regular'!important;
+  font-family: 'Cecilia-Regular' !important;
   color: #333;
 }
 
@@ -35,7 +32,7 @@ body {
   break-inside: avoid;
 }
 
-
+/* GRID */
 .grid {
   display: flex;
   justify-content: center;
@@ -43,7 +40,6 @@ body {
   flex-wrap: wrap;
   padding: 100px;
 }
-
 
 .item {
   text-align: center;
@@ -71,17 +67,9 @@ body {
 
 
 @keyframes folderOpen {
-  0% {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.15) translateY(-10px);
-  }
-  100% {
-    transform: scale(0.9) translateY(-20px);
-    opacity: 0;
-  }
+  0% { transform: scale(1) translateY(0); opacity: 1; }
+  50% { transform: scale(1.15) translateY(-10px); }
+  100% { transform: scale(0.9) translateY(-20px); opacity: 0; }
 }
 
 .item.opening {
@@ -89,35 +77,6 @@ body {
   pointer-events: none;
 }
 
-
-@media (max-width: 900px) {
-  .moodboard {
-    column-count: 2;
-  }
-
-  .grid {
-    gap: 30px;
-    padding: 40px 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .moodboard {
-    column-count: 1;
-  }
-
-  .grid {
-    gap: 20px;
-    padding: 20px;
-  }
-
-  .item {
-    width: 80px;
-  }
-
-  .icon {
-    width: 60px;
-  }
 .flipbook {
   width: 400px;
   height: 300px;
@@ -156,8 +115,32 @@ body {
 }
 
 
+@media (max-width: 900px) {
+  .moodboard {
+    column-count: 2;
+  }
 
+  .grid {
+    gap: 30px;
+    padding: 40px 20px;
+  }
+}
 
+@media (max-width: 600px) {
+  .moodboard {
+    column-count: 1;
+  }
 
+  .grid {
+    gap: 20px;
+    padding: 20px;
+  }
 
-  
+  .item {
+    width: 80px;
+  }
+
+  .icon {
+    width: 60px;
+  }
+}
