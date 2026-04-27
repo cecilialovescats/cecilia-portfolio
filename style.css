@@ -148,6 +148,20 @@ body {
   .icon {
     width: 60px;
   }
+
+.flipbook > div {
+  background: white;
+  backface-visibility: hidden;
+}
+.flipbook > div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  z-index: -1;
+}
+.flipbook .page {
+  background: white;
 }
 .flipbook {
   transform: translateZ(0);
