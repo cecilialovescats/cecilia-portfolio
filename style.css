@@ -149,3 +149,10 @@ body {
     width: 60px;
   }
 }
+.flipbook {
+  transform: translateZ(0);
+}
+
+.flipbook > div {
+  transform: translateZ(0);
+}
