@@ -9,6 +9,7 @@ body {
   color: #333;
 }
 
+
 .moodboard {
   column-count: 3;
   column-gap: 12px;
@@ -55,6 +56,7 @@ body {
   letter-spacing: 0.3px;
 }
 
+
 @keyframes folderOpen {
   0% { transform: scale(1) translateY(0); opacity: 1; }
   50% { transform: scale(1.15) translateY(-10px); }
@@ -66,10 +68,12 @@ body {
   pointer-events: none;
 }
 
+
 .flipbook {
   width: 700px;
   height: 500px;
   margin: 50px auto;
+  transform: translateZ(0);
 }
 
 .flipbook > div {
@@ -79,7 +83,16 @@ body {
   overflow: hidden;
   background: white;
   backface-visibility: hidden;
-  
+  transform: translateZ(0);
+}
+
+
+.flipbook > div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  z-index: -1;
 }
 
 .flipbook img {
@@ -88,6 +101,11 @@ body {
   object-fit: cover;
   display: block;
 }
+
+.flipbook .page {
+  background: white;
+}
+
 
 .hard {
   background: #AFE1AF;
@@ -107,6 +125,7 @@ body {
   font-weight: normal;
   opacity: 0.8;
 }
+
 
 @media (max-width: 1000px) {
   .flipbook {
@@ -148,25 +167,4 @@ body {
   .icon {
     width: 60px;
   }
-
-.flipbook > div {
-  background: white;
-  backface-visibility: hidden;
-}
-.flipbook > div::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: white;
-  z-index: -1;
-}
-.flipbook .page {
-  background: white;
-}
-.flipbook {
-  transform: translateZ(0);
-}
-
-.flipbook > div {
-  transform: translateZ(0);
 }
