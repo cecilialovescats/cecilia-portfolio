@@ -203,22 +203,37 @@ small{
   </div>
 
 </div>
-
 <script>
 
 const pages = document.querySelectorAll(".page");
 
 pages.forEach((page, index) => {
 
+  page.style.zIndex = pages.length - index;
+
   page.addEventListener("click", () => {
 
-    page.classList.toggle("flipped");
+    if (!page.classList.contains("flipped")) {
+
+      page.classList.add("flipped");
+
+      page.style.zIndex = index;
+
+    } else {
+
+      page.classList.remove("flipped");
+
+      page.style.zIndex = pages.length - index;
+
+    }
 
   });
 
 });
 
 </script>
+
+
 
 </body>
 </html>
