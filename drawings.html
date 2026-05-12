@@ -5,7 +5,6 @@
 <title>Doodles Magazine</title>
 
 <style>
-
 *{
   margin:0;
   padding:0;
@@ -18,11 +17,9 @@ body{
   justify-content:center;
   align-items:center;
   background:#e9edd6;
-  font-family: "Courier New", cursive;
+  font-family:"Courier New", cursive;
   overflow:hidden;
 }
-
-
 
 .book{
   position:relative;
@@ -31,15 +28,13 @@ body{
   perspective:2000px;
 }
 
-
-
 .page{
   position:absolute;
   width:400px;
   height:500px;
   right:0;
   transform-origin:left;
-  transition:transform 1s;
+  transition:transform 1.5s;
   transform-style:preserve-3d;
   cursor:pointer;
 }
@@ -54,11 +49,8 @@ body{
   overflow:hidden;
   background:#fffef8;
   border:1px solid #ddd;
-  box-shadow:
-    0 0 10px rgba(0,0,0,0.08);
+  box-shadow:0 0 10px rgba(0,0,0,0.08);
 }
-
-
 
 .front{
   display:flex;
@@ -71,8 +63,6 @@ body{
   transform:rotateY(180deg);
 }
 
-
-
 .page img{
   width:100%;
   height:100%;
@@ -84,34 +74,23 @@ body{
   position:absolute;
   bottom:20px;
   left:20px;
-  background:rgba(255,255,255,0.3);
-  padding:8px 14px;
-  font-size:15px;
-  transform:rotate(-2deg);
+  background:rgba(255,255,255,0.4);
+  padding:6px 12px;
+  font-size:14px;
 }
 
 
-
-.cover{
-  background:#AFE1AF;
+.title-page{
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  font-size:20px;
-}
-
-
-small{
-  margin-top:10px;
-  font-size:18px;
-  font-weight:normal;
+  font-size:24px;
 }
 
 .flipped{
   transform:rotateY(-180deg);
 }
-
 
 
 .book::before{
@@ -126,6 +105,10 @@ small{
   z-index:100;
 }
 
+small{
+  font-size:16px;
+  margin-top:10px;
+}
 </style>
 </head>
 
@@ -133,109 +116,78 @@ small{
 
 <div class="book">
 
-
+ 
   <div class="page" style="z-index:5;">
-    <div class="front cover">
-      Doodles Magazine
-      <small>Cecilia</small>
-    </div>
-
-    <div class="back">
-      <img src="images/bee.png">
-      <div class="caption">bee?</div>
+    <div class="front">
+      <img src="images/doodle journal (1).png" alt="Cover">
     </div>
   </div>
 
 
   <div class="page" style="z-index:4;">
     <div class="front">
+      <img src="images/bee.png">
+      <div class="caption">bee?</div>
+    </div>
+    <div class="back">
       <img src="images/Screenshot_22-4-2026_94811_.jpeg">
       <div class="caption">butterfly dancing</div>
     </div>
-
-    <div class="back">
-      <img src="images/Screenshot_22-4-2026_94926_.jpeg">
-      <div class="caption">dream vacation</div>
-    </div>
   </div>
-
 
 
   <div class="page" style="z-index:3;">
     <div class="front">
+      <img src="images/Screenshot_22-4-2026_94926_.jpeg">
+      <div class="caption">dream vacation</div>
+    </div>
+    <div class="back">
       <img src="images/Screenshot_22-4-2026_95047_.jpeg">
       <div class="caption">ocean sideway</div>
     </div>
-
-    <div class="back">
-      <img src="images/Screenshot_22-4-2026_9506_.jpeg">
-      <div class="caption">blossom</div>
-    </div>
   </div>
-
 
 
   <div class="page" style="z-index:2;">
     <div class="front">
+      <img src="images/Screenshot_22-4-2026_9506_.jpeg">
+      <div class="caption">blossom</div>
+    </div>
+    <div class="back">
       <img src="images/Screenshot_22-4-2026_9511_.jpeg">
       <div class="caption">bamboo</div>
     </div>
-
-    <div class="back">
-      <img src="images/Screenshot_22-4-2026_95124_.jpeg">
-      <div class="caption">at sea</div>
-    </div>
   </div>
 
-  <!-- BACK COVER -->
 
   <div class="page" style="z-index:1;">
     <div class="front">
-      <img src="images/Screenshot_22-4-2026_95142_.jpeg">
-      <div class="caption">rotten</div>
+      <img src="images/Screenshot_22-4-2026_95124_.jpeg">
+      <div class="caption">at sea</div>
     </div>
 
-    <div class="back cover">
+    <div class="back title-page">
       thank you
       <small>yours truly, Cecilia</small>
     </div>
   </div>
 
 </div>
-<script>
 
+<script>
 const pages = document.querySelectorAll(".page");
 
 pages.forEach((page, index) => {
-
-  page.style.zIndex = pages.length - index;
-
   page.addEventListener("click", () => {
-
-    if (!page.classList.contains("flipped")) {
-
-      page.classList.add("flipped");
-
-      page.style.zIndex = index;
-
-    } else {
-
-      page.classList.remove("flipped");
-
-      page.style.zIndex = pages.length - index;
-
-    }
-
+    page.classList.toggle("flipped");
   });
-
 });
-
 </script>
-<a href="index.html"> home</a> 
-    <a href="design.html"> design </a> 
-    <a href="photography.html"> photo </a> 
-    <a href="drawings.html"> doodles </a>
 
+<a href="index.html">home</a> 
+<a href="design.html">design</a> 
+<a href="photography.html">photo</a> 
+<a href="drawings.html">doodles</a>
 
 </body>
 </html>
