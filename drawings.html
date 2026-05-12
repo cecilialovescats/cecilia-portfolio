@@ -28,17 +28,17 @@ body{
   perspective:2000px;
 }
 
+
 .page{
   position:absolute;
   width:400px;
   height:500px;
   right:0;
   transform-origin:left;
-  transition:transform 1.5s;
+  transition:transform 1.2s ease;
   transform-style:preserve-3d;
   cursor:pointer;
 }
-
 
 .front,
 .back{
@@ -57,7 +57,6 @@ body{
   justify-content:center;
   align-items:center;
 }
-
 
 .back{
   transform:rotateY(180deg);
@@ -86,6 +85,7 @@ body{
   justify-content:center;
   align-items:center;
   font-size:24px;
+  text-align:center;
 }
 
 .flipped{
@@ -116,10 +116,13 @@ small{
 
 <div class="book">
 
- 
   <div class="page" style="z-index:5;">
     <div class="front">
-      <img src="images/doodle journal (1).png" alt="Cover">
+      <img src="images/art.png" alt="Cover">
+    </div>
+    <div class="back title-page">
+      Doodles Magazine
+      <small>Click to open</small>
     </div>
   </div>
 
@@ -159,7 +162,6 @@ small{
     </div>
   </div>
 
-
   <div class="page" style="z-index:1;">
     <div class="front">
       <img src="images/Screenshot_22-4-2026_95124_.jpeg">
@@ -179,7 +181,17 @@ const pages = document.querySelectorAll(".page");
 
 pages.forEach((page, index) => {
   page.addEventListener("click", () => {
-    page.classList.toggle("flipped");
+
+    // bring clicked page to front when flipping forward
+    if (!page.classList.contains("flipped")) {
+      page.style.zIndex = 100 + index;
+      page.classList.add("flipped");
+    } 
+    else {
+      page.classList.remove("flipped");
+      page.style.zIndex = index;
+    }
+
   });
 });
 </script>
