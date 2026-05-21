@@ -1,77 +1,177 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>PS1 Horror Menu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    font-family:'VT323', monospace;
+    background:black;
+}
+
+/* BACKGROUND IMAGES */
+
+.background{
+    position:fixed;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    transition:0.4s ease;
+    filter:
+        brightness(0.45)
+        contrast(1.1)
+        saturate(0.8);
+}
+
+/* dark overlay */
+.background::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        rgba(0,0,0,0.35);
+}
+
+/* CRT scanlines */
+.scanlines{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+}
+
+/* MENU */
+
+.menu{
+    position:absolute;
+    top:50%;
+    left:10%;
+    transform:translateY(-50%);
+    color:white;
+    z-index:2;
+}
+
+.menu h1{
+    font-size:70px;
+    margin-bottom:30px;
+    letter-spacing:4px;
+    text-shadow:0 0 10px rgba(255,255,255,0.5);
+}
+
+.menu ul{
+    list-style:none;
+}
+
+.menu li{
+    margin:20px 0;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-size:52px;
+    position:relative;
+    transition:0.2s;
+}
+
+/* cursor arrow */
+
+.menu a::before{
+    content:"▶";
+    position:absolute;
+    left:-40px;
+    opacity:0;
+    transition:0.2s;
+}
+
+.menu a:hover::before{
+    opacity:1;
+}
+
+.menu a:hover{
+    color:#d8d8d8;
+    transform:translateX(10px);
+    text-shadow:
+        0 0 5px white,
+        0 0 20px white;
+}
+
+
+
+@keyframes flicker{
+    0%{opacity:1;}
+    50%{opacity:0.98;}
+    100%{opacity:1;}
+}
+
+body{
+    animation:flicker 0.08s infinite;
+}
+
+</style>
 </head>
 
 <body>
-<style>
-body {
-  background-image: url('images/ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (3).png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-}
-</style>
-  <header>
-    <h1>Cecilia</h1>
-    <p>GRAPHIC DESIGNER </p>
-  </header>
 
-  <div class="grid">
+<div class="background" id="bg"></div>
 
-    <div class="item">
-      <a href="photography.html" class="folder">
-        <img src="images/2349c4577c7f9d976e5182509f6a6f7b-removebg-preview.png" alt="Photography"width="300" height="350">
-    
-      </a>
-    </div>*
-        <div class="item">
-      <a href="me.html" class="folder">
-        <img src="images/Skærmbillede_2026-04-27_133958-removebg-preview.png" alt="me"width="280" height="350">
-      </a>
-    </div>
-    
-    <div class="item">
-      <a href="design.html" class="folder">
-        <img src="images/Skærmbillede_2026-05-08_112109-removebg-preview.png" alt ="design" width="300" height="250">
-      </a>
-    </div>
+<div class="scanlines"></div>
 
-    <div class="item">
-      <a href="drawings.html" class="folder">
-        <img src="images/Screenshot_22-4-2026_94811_-removebg-preview.png" alt="drawings"width="300" height="200">
-      </a>
-    </div>
+<div class="menu">
 
-  </div>
+    <h1>MENU</h1>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: celia_bt13@hotmail.com</p>
-  </section>
+    <ul>
+        <li><a href="about.html" data-img="images/about.jpg">ABOUT</a></li>
 
-  <footer>
-    <p>© 2026 Cecilia</p>
-  </footer>
+        <li><a href="projects.html" data-img="images/projects.jpg">PROJECTS</a></li>
+
+        <li><a href="gallery.html" data-img="images/gallery.jpg">GALLERY</a></li>
+
+        <li><a href="contact.html" data-img="images/contact.jpg">CONTACT</a></li>
+    </ul>
+
+</div>
+
 <script>
-  document.querySelectorAll(".folder").forEach(folder => {
-    folder.addEventListener("click", function (e) {
-      e.preventDefault(); 
 
-      const item = this.closest(".item");
-      item.classList.add("opening");
+const bg = document.getElementById("bg");
 
-      const link = this.href;
+const links = document.querySelectorAll(".menu a");
 
-      setTimeout(() => {
-        window.location.href = link;
-      }, 400); 
+links.forEach(link => {
+
+    link.addEventListener("mouseenter", () => {
+
+        const image = link.getAttribute("data-img");
+
+        bg.style.backgroundImage = `url(${image})`;
+
     });
-  });
+
+});
+
 </script>
+
 </body>
 </html>
