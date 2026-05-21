@@ -1,10 +1,10 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>PS1 Horror Menu</title>
+<title>Cecilia portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 
@@ -20,36 +20,46 @@ body{
     overflow:hidden;
     font-family:'VT323', monospace;
     background:black;
+    animation:flicker 0.08s infinite;
 }
 
-/* BACKGROUND IMAGES */
 
 .background{
     position:fixed;
     inset:0;
+
+    background-image:url("images/546feeff-c6b9-4bf3-b8e7-2b28f70b96e4.jpg");
+
     background-size:cover;
     background-position:center;
+
     transition:0.4s ease;
+
     filter:
-        brightness(0.45)
-        contrast(1.1)
-        saturate(0.8);
+        brightness(0.4)
+        contrast(1.2)
+        saturate(0.7)
+        blur(0.5px);
+
+    image-rendering:pixelated;
 }
 
-/* dark overlay */
+
+
 .background::after{
     content:"";
     position:absolute;
     inset:0;
-    background:
-        rgba(0,0,0,0.35);
+    background:rgba(0,0,0,0.35);
 }
 
-/* CRT scanlines */
+
+
 .scanlines{
     position:fixed;
     inset:0;
     pointer-events:none;
+
     background:
     repeating-linear-gradient(
         to bottom,
@@ -60,7 +70,7 @@ body{
     );
 }
 
-/* MENU */
+
 
 .menu{
     position:absolute;
@@ -75,7 +85,10 @@ body{
     font-size:70px;
     margin-bottom:30px;
     letter-spacing:4px;
-    text-shadow:0 0 10px rgba(255,255,255,0.5);
+
+    text-shadow:
+        0 0 5px white,
+        0 0 20px white;
 }
 
 .menu ul{
@@ -83,24 +96,29 @@ body{
 }
 
 .menu li{
-    margin:20px 0;
+    margin:25px 0;
 }
 
 .menu a{
     color:white;
     text-decoration:none;
     font-size:52px;
+
     position:relative;
+
     transition:0.2s;
 }
 
-/* cursor arrow */
 
 .menu a::before{
     content:"▶";
+
     position:absolute;
+
     left:-40px;
+
     opacity:0;
+
     transition:0.2s;
 }
 
@@ -108,9 +126,12 @@ body{
     opacity:1;
 }
 
+
 .menu a:hover{
     color:#d8d8d8;
+
     transform:translateX(10px);
+
     text-shadow:
         0 0 5px white,
         0 0 20px white;
@@ -119,13 +140,19 @@ body{
 
 
 @keyframes flicker{
-    0%{opacity:1;}
-    50%{opacity:0.98;}
-    100%{opacity:1;}
-}
 
-body{
-    animation:flicker 0.08s infinite;
+    0%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:0.985;
+    }
+
+    100%{
+        opacity:1;
+    }
+
 }
 
 </style>
@@ -133,31 +160,63 @@ body{
 
 <body>
 
+
+
 <div class="background" id="bg"></div>
 
+
 <div class="scanlines"></div>
+
+
 
 <div class="menu">
 
     <h1>MENU</h1>
 
     <ul>
-        <li><a href="about.html" data-img="images/about.jpg">ABOUT</a></li>
 
-        <li><a href="projects.html" data-img="images/projects.jpg">PROJECTS</a></li>
+        <li>
+            <a href="about.html"
+               data-img="images/about.jpg">
+               ABOUT
+            </a>
+        </li>
 
-        <li><a href="gallery.html" data-img="images/gallery.jpg">GALLERY</a></li>
+        <li>
+            <a href="projects.html"
+               data-img="images/projects.jpg">
+               PROJECTS
+            </a>
+        </li>
 
-        <li><a href="contact.html" data-img="images/contact.jpg">CONTACT</a></li>
+        <li>
+            <a href="gallery.html"
+               data-img="images/gallery.jpg">
+               GALLERY
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html"
+               data-img="images/contact.jpg">
+               CONTACT
+            </a>
+        </li>
+
     </ul>
 
 </div>
 
 <script>
 
+
 const bg = document.getElementById("bg");
 
+
+
 const links = document.querySelectorAll(".menu a");
+
+
 
 links.forEach(link => {
 
@@ -166,6 +225,14 @@ links.forEach(link => {
         const image = link.getAttribute("data-img");
 
         bg.style.backgroundImage = `url(${image})`;
+
+    });
+
+
+    link.addEventListener("mouseleave", () => {
+
+        bg.style.backgroundImage =
+        `url(images/546feeff-c6b9-4bf3-b8e7-2b28f70b96e4.jpg)`;
 
     });
 
