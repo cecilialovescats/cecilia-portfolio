@@ -1,147 +1,175 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Fonts</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Fonts</title>
 
-  <style>
+<style>
 
-    @font-face {
-      font-family: 'Cecilia';
-      src: url('./Cecilia-Regular.woff') format('woff');
-    }
-    @font-face { 
-      font-family: 'ThaiByCelia'; src: url('./Thaibycelia-Regular.woff') format('woff'); 
-    } 
-    @font-face { 
-      font-family: 'Wavey'; src: url('./Waveyyy-Regular.woff') format('woff'); 
-    }
+@font-face {
+  font-family: 'Cecilia';
+  src: url('./Cecilia-Regular.woff') format('woff');
+}
 
-    body {
-      font-family: sans-serif;
-      padding: 40px;
-      background: #f4f4f4;
-    }
+@font-face {
+  font-family: 'ThaiByCelia';
+  src: url('./Thaibycelia-Regular.woff') format('woff');
+}
 
-    .font-card {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      max-width: 700px;
-    }
+@font-face {
+  font-family: 'Wavey';
+  src: url('./Waveyyy-Regular.woff') format('woff');
+}
 
-    .preview { 
-      font-size: 40px; margin: 20px 0; word-break: break-word; 
-    } 
-    .cecilia-font {
-      font-family: 'Cecilia'; 
-    } 
-    .thai-font { 
-      font-family: 'ThaiByCelia'; 
-    } 
-    .wavey-font { 
-      font-family: 'Wavey'; 
-    }
+body {
+  font-family: sans-serif;
+  padding: 40px;
+  background: #f4f4f4;
+}
 
-    input {
-      width: 100%;
-      padding: 12px;
-      font-size: 18px;
-      margin-top: 12px;
-    }
+h1 {
+  margin-bottom: 40px;
+}
 
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
-      padding: 12px 18px;
-      background: black;
-      color: white;
-      border-radius: 8px;
-    }
+.font-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  max-width: 700px;
+}
 
-  </style>
+.preview {
+  font-size: 40px;
+  margin: 20px 0;
+  word-break: break-word;
+}
+
+.cecilia-font {
+  font-family: 'Cecilia';
+}
+
+.thai-font {
+  font-family: 'ThaiByCelia';
+}
+
+.wavey-font {
+  font-family: 'Wavey';
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  margin-top: 12px;
+  box-sizing: border-box;
+}
+
+a {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  padding: 12px 18px;
+  background: black;
+  color: white;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+</style>
 </head>
+
 <body>
 
-  <h1>My Font Collection</h1>
+<h1>My Font Collections</h1>
 
-  <div class="font-card">
 
-    <h2>Cecilia Made It</h2>
+<div class="font-card">
 
-    <p class="preview">
-      The quick brown fox jumps over the lazy dog
-    </p>
+  <h2>Cecilia Made It</h2>
 
-    <input
-      type="text"
-      id="previewInput"
-      placeholder="Type something..."
-    >
+  <p class="preview cecilia-font">
+    The quick brown fox jumps over the lazy dog
+  </p>
 
-    <br>
+  <input
+    type="text"
+    class="preview-input"
+    placeholder="tell me sa secret"
+  >
 
-    <a href="./Cecilia-Regular.woff" download>
-      Download Font
-    </a>
+  <a href="./Cecilia-Regular.woff" download>
+    Download Font
+  </a>
 
-  </div>
-  
- <div class="font-card">
+</div>
 
-    <h2>in Thai/h2>
 
-    <p class="preview">
-      ขอให้วันนี้เป็นวันที่น่ารักนะคะ
-    </p>
+<div class="font-card">
 
-    <input
-      type="text"
-      id="previewInput"
-      placeholder="เขียนความในใจ..."
-    >
+  <h2>In Thai</h2>
 
-    <br>
+  <p class="preview thai-font">
+    ขอให้วันนี้เป็นวันที่น่ารักนะคะ
+  </p>
 
-    <a href="./Thaibycelia-Regular.woff" download>
-      Download Font
-    </a>
+  <input
+    type="text"
+    class="preview-input"
+    placeholder="เขียนความในใจ..."
+  >
 
-  </div>
-   <div class="font-card">
+  <a href="./Thaibycelia-Regular.woff" download>
+    Download Font
+  </a>
 
-    <h2>Wavey</h2>
+</div>
 
-    <p class="preview">
-      The quick brown fox jumps over the lazy dog
-    </p>
 
-    <input
-      type="text"
-      id="previewInput"
-      placeholder="Type something..."
-    >
+<div class="font-card">
 
-    <br>
+  <h2>Wavey</h2>
 
-    <a href="./Waveyyy-Regular.woff" download>
-      Download Font
-    </a>
+  <p class="preview wavey-font">
+    The quick brown fox jumps over the lazy dog
+  </p>
 
-  </div>
-  
-  <script>
+  <input
+    type="text"
+    class="preview-input"
+    placeholder="what's on ur mind"
+  >
 
-    const input = document.getElementById("previewInput");
-    const preview = document.querySelector(".preview");
+  <a href="./Waveyyy-Regular.woff" download>
+    Download Font
+  </a>
 
-    input.addEventListener("input", () => {
-      preview.textContent = input.value || "The quick brown fox jumps over the lazy dog";
-    });
+</div>
 
-  </script>
+<script>
+
+document.querySelectorAll(".font-card").forEach(card => {
+
+  const input = card.querySelector(".preview-input");
+  const preview = card.querySelector(".preview");
+
+  const defaultText = preview.textContent;
+
+  input.addEventListener("input", () => {
+    preview.textContent = input.value || defaultText;
+  });
+
+});
+
+</script>
 
 </body>
 </html>
+```
