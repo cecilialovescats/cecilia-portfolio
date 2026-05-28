@@ -218,6 +218,23 @@ body {
   font-family: 'CeciliaMadeIt';
   font-size: 32px;
 }
+@font-face {
+  font-family: 'Cecilia';
+  src: url('./Cecilia-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ThaiByCelia';
+  src: url('./Thaibycelia-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Wavey';
+  src: url('./Waveyyy-Regular.woff') format('woff');
+  font-display: swap;
+}
 
 
 
