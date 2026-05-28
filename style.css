@@ -197,13 +197,8 @@ body {
   }
 }
 @font-face {
-  font-family: 'NovaSans';
-  src: url('./fonts/NovaSans-Regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'PixelDream';
-  src: url('./fonts/PixelDream-Regular.woff2') format('woff2');
+  font-family: 'CeciliaMadeIt';
+  src: url('Cecilia-Regular.woff') format('woff2');
 }
 
 body {
@@ -219,15 +214,12 @@ body {
   border-radius: 12px;
 }
 
-.nova-preview {
-  font-family: 'NovaSans';
+.celia-preview {
+  font-family: 'CeciliaMadeIt';
   font-size: 32px;
 }
 
-.pixel-preview {
-  font-family: 'PixelDream';
-  font-size: 32px;
-}
+
 
 a {
   display: inline-block;
