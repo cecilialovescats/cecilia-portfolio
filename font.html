@@ -4,27 +4,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Fonts</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <style>
+
+    @font-face {
+      font-family: 'Cecilia';
+      src: url('./Cecilia-Regular.woff') format('woff');
+    }
+
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      background: #f4f4f4;
+    }
+
+    .font-card {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 700px;
+    }
+
+    .preview {
+      font-family: 'Cecilia';
+      font-size: 40px;
+      margin: 20px 0;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      margin-top: 12px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      padding: 12px 18px;
+      background: black;
+      color: white;
+      border-radius: 8px;
+    }
+
+  </style>
 </head>
 <body>
 
-<h1>My Font Collection</h1>
+  <h1>My Font Collection</h1>
 
-<div class="font-card">
+  <div class="font-card">
 
-  <h2>Cecilia made it</h2>
+    <h2>Cecilia Made It</h2>
 
-  <p class="preview">
-    The quick brown fox jumps over the lazy dog
-  </p>
+    <p class="preview">
+      The quick brown fox jumps over the lazy dog
+    </p>
 
-  <a href="Cecilia-Regular.woff" download>
-    Download Font
-  </a>
+    <input
+      type="text"
+      id="previewInput"
+      placeholder="Type something..."
+    >
 
-</div>
+    <br>
 
+    <a href="./Cecilia-Regular.woff" download>
+      Download Font
+    </a>
 
+  </div>
+
+  <script>
+
+    const input = document.getElementById("previewInput");
+    const preview = document.querySelector(".preview");
+
+    input.addEventListener("input", () => {
+      preview.textContent = input.value || "The quick brown fox jumps over the lazy dog";
+    });
+
+  </script>
 
 </body>
 </html>
