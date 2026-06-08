@@ -42,6 +42,11 @@ body {
     max-width: 1000px;
     margin: auto;
 }
+.grid img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+}
 .folder {
     display: flex;
     justify-content: center;
