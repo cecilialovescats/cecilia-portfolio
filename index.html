@@ -15,254 +15,226 @@
 
 body {
     min-height: 100vh;
-    background: #fffafa;
     font-family: "Trebuchet MS", sans-serif;
+    background:
+        linear-gradient(#ffffff15, #ffffff15),
+        url("images/collage-bg.jpg") center center / cover fixed;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 50px 20px;
+    justify-content: center;
+    padding: 35px;
 }
 
-.portfolio {
-    width: 760px;
+/* HOMEPAGE LAYOUT */
+.home {
+    width: 1050px;
     max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 390px;
+    gap: 35px;
+    align-items: center;
 }
 
+/* LEFT SIDE */
+.intro {
+    text-align: center;
+    padding: 25px;
+}
+
+.intro h1 {
+    font-size: clamp(40px, 7vw, 75px);
+    color: white;
+    -webkit-text-stroke: 1.5px #d68eb5;
+    text-shadow: 3px 4px #b878a2;
+    letter-spacing: 3px;
+}
+
+.intro p {
+    display: inline-block;
+    margin-top: 15px;
+    background: #ffffffd9;
+    color: #b47b9f;
+    border-radius: 30px;
+    padding: 12px 22px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.intro .decoration {
+    font-size: 32px;
+    margin-top: 20px;
+    letter-spacing: 15px;
+}
+
+/* RETRO DEVICE */
 .device {
-    position: relative;
-    background: linear-gradient(145deg,#ffb3cd,#ed7fa8);
-    padding: 12px;
+    background: linear-gradient(145deg,#ffc3d9,#ec82ad);
+    padding: 13px;
     border-radius: 32px;
-    box-shadow: 0 8px 0 #ce6d96,
-                0 18px 30px #b66d8950;
+    border: 2px solid #fff1f7;
+    box-shadow:
+        0 9px 0 #d36d9b,
+        0 20px 35px #85546b55;
+    position: relative;
 }
 
+/* SCREEN */
 .screen {
-    min-height: 390px;
     background: #a9bdf2;
-    border: 5px solid #f7a6c4;
-    border-radius: 25px;
+    border: 5px solid #f8b3cf;
+    border-radius: 24px;
+    padding: 15px;
+}
+
+/* TOP DISPLAY */
+.display {
+    background: linear-gradient(145deg,#fff,#fff6fb);
+    border: 7px solid #e7e9ec;
+    border-radius: 24px;
+    padding: 12px;
+    box-shadow: inset 0 0 12px #bbb;
+}
+
+.display-image {
+    height: 215px;
     position: relative;
-}
-
-/* LARGE ROUND IMAGE DISPLAY */
-.preview-frame {
-    position: absolute;
-    z-index: 3;
-    left: 12px;
-    top: -25px;
-    width: 440px;
-    height: 440px;
-    border-radius: 50%;
-    background: #fff;
-    border: 12px solid #e7e9eb;
-    box-shadow: inset 0 0 15px #aaa,
-                0 5px 12px #7775;
     overflow: hidden;
+    border-radius: 15px;
+    background: #f9e9f3;
 }
 
-.preview-inner {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    background: #fff;
-}
-
-.preview-inner img {
+.display-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: opacity .3s ease;
 }
 
-.preview-decoration {
+.display-label {
     position: absolute;
-    font-size: 35px;
-    pointer-events: none;
-}
-
-.flower1 { top: 20px; left: 45px; }
-.flower2 { top: 25px; right: 45px; }
-.flower3 { bottom: 55px; left: 30px; }
-.flower4 { bottom: 55px; right: 35px; }
-
-.preview-caption {
-    position: absolute;
-    bottom: 27px;
-    left: 0;
+    bottom: 0;
     width: 100%;
     text-align: center;
-    color: #ad79a5;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-shadow: 0 1px white;
-    pointer-events: none;
-}
-
-/* RIGHT PROJECT PANEL */
-.menu {
-    position: absolute;
-    right: 48px;
-    top: 15px;
-    width: 195px;
-    min-height: 325px;
-    border-radius: 25px;
-    background: linear-gradient(145deg,#aaa2e7,#c0b5f0);
     padding: 12px;
-}
-
-.menu-title {
-    text-align: center;
+    color: #a36e9b;
+    background: #ffffffc9;
     font-size: 12px;
-    color: white;
     font-weight: bold;
     letter-spacing: 2px;
-    margin-bottom: 12px;
-    text-shadow: 1px 2px #777;
 }
 
-.categories {
+/* PANEL TITLE */
+.panel-title {
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-shadow: 2px 2px #897ab9;
+    margin: 17px 0 13px;
+}
+
+/* PROJECT GRID */
+.projects {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 9px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 
-.category {
-    height: 67px;
-    border-radius: 19px;
-    border: 3px solid #ffffff90;
-    background: linear-gradient(145deg,#fff,#fff0f7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.project {
     text-decoration: none;
-    color: #a778a6;
-    box-shadow: inset 0 2px 5px #ddd;
+    background: linear-gradient(145deg,#fff,#fff0f7);
+    border: 3px solid #ffffffa8;
+    border-radius: 15px;
+    padding: 5px;
+    text-align: center;
     transition: .25s;
-    cursor: pointer;
+    box-shadow: inset 0 0 6px #ddd;
 }
 
-.category:hover,
-.category:focus-visible {
-    transform: scale(1.07);
-    border-color: white;
+.project:hover,
+.project:focus-visible {
+    transform: translateY(-5px) scale(1.04);
     background: white;
-    box-shadow: 0 4px 10px #7774;
+    box-shadow: 0 6px 12px #735b8c55;
     outline: none;
 }
 
-.category span {
-    font-size: 24px;
+.project img {
+    width: 100%;
+    height: 66px;
+    object-fit: cover;
+    border-radius: 9px;
+    display: block;
 }
 
-.category small {
+.project span {
+    display: block;
+    color: #a4779b;
     font-size: 9px;
     font-weight: bold;
+    letter-spacing: .5px;
+    padding: 7px 0 3px;
 }
 
-/* DECORATIVE SIDE BUTTONS */
-.side-buttons {
-    position: absolute;
-    right: 8px;
-    top: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-}
-
-.side-buttons a {
-    width: 32px;
-    height: 32px;
-    background: linear-gradient(white,#d9dafa);
-    border: 3px solid #8e9cdd;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    text-decoration: none;
-    color: #8a80c9;
-    font-size: 16px;
-}
-
-/* BOTTOM TOY BUTTONS */
+/* DECORATIVE BUTTONS */
 .controls {
     display: flex;
     justify-content: center;
-    gap: 32px;
-    padding: 15px;
-    position: relative;
+    gap: 28px;
+    padding: 13px 0 3px;
 }
 
 .controls span {
-    display: block;
-    width: 31px;
-    height: 31px;
+    width: 27px;
+    height: 27px;
     border-radius: 50%;
-    background: linear-gradient(145deg,#9bf078,#55d94e);
-    border: 3px solid #a2e58b;
+    background: linear-gradient(145deg,#a4f47f,#58d64e);
+    border: 3px solid #a3e68f;
     box-shadow: 0 3px 4px #7775;
 }
 
 .controls span:first-child {
-    width: 39px;
-    height: 19px;
-    margin-top: 7px;
+    width: 38px;
+    height: 18px;
+    margin-top: 5px;
     border-radius: 20px;
 }
 
-/* FOOTER */
-footer {
+/* BOTTOM TEXT */
+.footer {
     text-align: center;
-    color: #c18eae;
+    color: white;
     font-size: 11px;
+    font-weight: bold;
     letter-spacing: 2px;
-    margin-top: 35px;
+    text-shadow: 1px 2px #a36e9b;
+    margin-top: 17px;
 }
 
-/* MOBILE RESPONSIVE */
-@media(max-width:650px) {
+/* MOBILE */
+@media(max-width: 750px) {
     body {
-        padding: 25px 12px;
+        padding: 20px 12px;
+        background-attachment: scroll;
     }
 
-    .screen {
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
+    .home {
+        grid-template-columns: 1fr;
         gap: 15px;
+        max-width: 430px;
     }
 
-    .preview-frame {
-        position: relative;
-        left: auto;
-        top: auto;
-        width: min(100%,340px);
-        height: auto;
-        aspect-ratio: 1;
-        margin: 0 auto;
+    .intro {
+        padding: 5px;
     }
 
-    .menu {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: 100%;
-        min-height: auto;
+    .intro h1 {
+        font-size: 43px;
     }
 
-    .categories {
-        grid-template-columns: repeat(4,1fr);
-    }
-
-    .category {
-        height: 65px;
-    }
-
-    .side-buttons {
-        display: none;
+    .display-image {
+        height: 220px;
     }
 }
 </style>
@@ -270,120 +242,107 @@ footer {
 
 <body>
 
-<div class="portfolio">
+<div class="home">
 
-    <div class="device">
+    <!-- LEFT SIDE INTRODUCTION -->
+    <section class="intro">
+
+        <h1>CECILIA ♡</h1>
+
+        <p>WELCOME TO MY LITTLE WORLD</p>
+
+        <div class="decoration">
+            ✿ ☆ ♡ ☆ ✿
+        </div>
+
+    </section>
+
+
+    <!-- RIGHT SIDE PORTFOLIO DEVICE -->
+    <section class="device">
 
         <div class="screen">
 
-            <!-- MAIN IMAGE PREVIEW -->
-            <div class="preview-frame">
-                <div class="preview-inner">
+            <!-- PROJECT PREVIEW -->
+            <div class="display">
+
+                <div class="display-image">
 
                     <img
-                        id="mainPreview"
-                        src="pic1.jpg"
+                        id="preview"
+                        src="images/profile.jpg"
                         alt="Portfolio preview"
                     >
 
-                    <span class="preview-decoration flower1">🌼</span>
-                    <span class="preview-decoration flower2">🌸</span>
-                    <span class="preview-decoration flower3">🌷</span>
-                    <span class="preview-decoration flower4">🌺</span>
-
-                    <div class="preview-caption" id="caption">
+                    <div class="display-label" id="previewTitle">
                         WELCOME TO MY WORLD ♡
                     </div>
 
                 </div>
+
             </div>
 
-            <div class="menu">
+            <!-- PROJECTS -->
+            <h2 class="panel-title">
+                MY LITTLE WORLD ♡
+            </h2>
 
-                <div class="menu-title">MY LITTLE WORLD ♡</div>
+            <div class="projects">
 
-                <div class="categories">
+                <a href="fonts.html"
+                   class="project"
+                   data-image="images/fonts.jpg"
+                   data-title="MY FONTS">
 
-                    <a href="font.html"
-                       class="category project"
-                       data-preview="pic2.jpg"
-                       data-title="FONTS">
+                    <img src="images/fonts.jpg" alt="Fonts project">
+                    <span>FONTS</span>
+                </a>
 
-                        <span>🎀</span>
-                        <small>FONTS</small>
-                    </a>
+                <a href="design.html"
+                   class="project"
+                   data-image="images/design.jpg"
+                   data-title="MY DESIGNS">
 
-                    <a href="design.html"
-                       class="category project"
-                       data-preview="pic3.jpg"
-                       data-title="DESIGN">
+                    <img src="images/design.jpg" alt="Design project">
+                    <span>DESIGN</span>
+                </a>
 
-                        <span>🎨</span>
-                        <small>DESIGN</small>
-                    </a>
+                <a href="photo.html"
+                   class="project"
+                   data-image="images/photo.jpg"
+                   data-title="PHOTOGRAPHY">
 
-                    <a href="photography.html"
-                       class="category project"
-                       data-preview="pic4.jpg"
-                       data-title="PHOTOGRAPHY">
+                    <img src="images/photo.jpg" alt="Photography project">
+                    <span>PHOTO</span>
+                </a>
 
-                        <span>📷</span>
-                        <small>PHOTO</small>
-                    </a>
+                <a href="drawing.html"
+                   class="project"
+                   data-image="images/drawing.jpg"
+                   data-title="MY DRAWINGS">
 
-                    <a href="drawing.html"
-                       class="category project"
-                       data-preview="pic5.jpg"
-                       data-title="art">
+                    <img src="images/drawing.jpg" alt="Drawing project">
+                    <span>DRAWING</span>
+                </a>
 
-                        <span>🦋</span>
-                        <small>ART</small>
-                    </a>
+                <a href="art.html"
+                   class="project"
+                   data-image="images/art.jpg"
+                   data-title="MY ART">
 
-                    <a href="project5.html"
-                       class="category project"
-                       data-preview="pic6.jpg"
-                       data-title="DRAWINGS">
+                    <img src="images/art.jpg" alt="Art project">
+                    <span>ART</span>
+                </a>
 
-                        <span>🌸</span>
-                        <small>DRAWINGS</small>
-                    </a>
+                <a href="creative.html"
+                   class="project"
+                   data-image="images/creative.jpg"
+                   data-title="CREATIVE WORK">
 
-                    <a href="project6.html"
-                       class="category project"
-                       data-preview="pic7.jpg"
-                       data-title="CREATIVE WORK">
+                    <img src="images/creative.jpg" alt="Creative work">
+                    <span>CREATIVE</span>
+                </a>
 
-                        <span>🧸</span>
-                        <small>CREATIVE</small>
-                    </a>
-
-                    <a href="me.html"
-                       class="category project"
-                       data-preview="pic8.jpg"
-                       data-title="PERSONAL PROJECTS">
-
-                        <span>🍒</span>
-                        <small>PERSONAL</small>
-                    </a>
-
-                    <a href="project8.html"
-                       class="category project"
-                       data-preview="pic9.jpg"
-                       data-title="MORE WORK">
-
-                        <span>⭐</span>
-                        <small>MORE</small>
-                    </a>
-
-                </div>
-            </div>
-
-
-            <div class="side-buttons">
-                <a href="about.html">♡</a>
-                <a href="contact.html">✉</a>
-                <a href="me.html">☻</a>
             </div>
 
         </div>
@@ -394,27 +353,25 @@ footer {
             <span></span>
         </div>
 
-    </div>
-
-    <footer>♡ THANK YOU FOR VISITING ♡</footer>
+    </section>
 
 </div>
 
 <script>
-const preview = document.getElementById("mainPreview");
-const caption = document.getElementById("caption");
+const preview = document.getElementById("preview");
+const previewTitle = document.getElementById("previewTitle");
 
-const originalImage = "pic1.jpg";
-const originalCaption = "WELCOME TO MY WORLD ♡";
+const defaultImage = "images/profile.jpg";
+const defaultTitle = "WELCOME TO MY WORLD ♡";
 
-const projects = document.querySelectorAll(".project");
+const projectLinks = document.querySelectorAll(".project");
 
-function showProject(project) {
+function changePreview(project) {
     preview.style.opacity = "0";
 
     setTimeout(() => {
-        preview.src = project.dataset.preview;
-        caption.textContent = project.dataset.title;
+        preview.src = project.dataset.image;
+        previewTitle.textContent = project.dataset.title;
         preview.style.opacity = "1";
     }, 150);
 }
@@ -423,29 +380,25 @@ function resetPreview() {
     preview.style.opacity = "0";
 
     setTimeout(() => {
-        preview.src = originalImage;
-        caption.textContent = originalCaption;
+        preview.src = defaultImage;
+        previewTitle.textContent = defaultTitle;
         preview.style.opacity = "1";
     }, 150);
 }
 
-projects.forEach(project => {
+projectLinks.forEach(project => {
 
     project.addEventListener("mouseenter", () => {
-        showProject(project);
+        changePreview(project);
     });
 
-    project.addEventListener("mouseleave", () => {
-        resetPreview();
-    });
+    project.addEventListener("mouseleave", resetPreview);
 
     project.addEventListener("focus", () => {
-        showProject(project);
+        changePreview(project);
     });
 
-    project.addEventListener("blur", () => {
-        resetPreview();
-    });
+    project.addEventListener("blur", resetPreview);
 
 });
 </script>
