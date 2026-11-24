@@ -165,8 +165,29 @@ body {
   outline: none;
 }
 
+.device-project {
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .device-project img {
-  display: none;
+    display: block;
+    width: 100%;
+    height: 58px;
+    object-fit: cover;
+    border-radius: 7px;
+    background: #f9e9f3;
+}
+
+.device-project span {
+    display: block;
+    height: auto;
+    padding: 3px 0;
+    color: #a4779b;
+    font-size: 8px;
+    text-align: center;
 }
 
 .device-project span {
@@ -528,9 +549,9 @@ body {
         <div class="device-projects">
 
           <a href="font.html" class="device-project"
-             data-image="images/fonts.jpg"
+             data-image="images/font.png"
              data-title="MY FONTS">
-            <img src="images/fonts.jpg" alt="Fonts project">
+            <img src="images/font.png" alt="Fonts project">
             <span>FONTS</span>
           </a>
 
