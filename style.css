@@ -247,3 +247,224 @@ a {
   display: inline-block;
   margin-top: 12px;
 }
+
+/* PAGE BACKGROUND */
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Trebuchet MS", sans-serif;
+    background: url("bgph.png") center top / 100% auto repeat-y;
+    overflow-x: hidden;
+}
+
+/* FIRST PAGE */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 960px;
+    display: block;
+    padding: 0;
+}
+
+/* WELCOME TEXT - UPPER LEFT */
+.intro {
+    position: absolute;
+    top: 125px;
+    left: 5.5%;
+    padding: 0;
+    text-align: left;
+}
+
+.intro h1 {
+    font-size: clamp(48px, 8vw, 78px);
+    font-weight: 400;
+    color: black;
+    -webkit-text-stroke: 0;
+    text-shadow: none;
+    letter-spacing: -2px;
+}
+
+.intro p {
+    display: none;
+}
+
+.intro .stars {
+    display: none;
+}
+
+/* SMALL DEVICE - MIDDLE RIGHT */
+.device {
+    position: absolute;
+    top: 510px;
+    right: 23%;
+    width: 225px;
+    padding: 8px;
+    border-radius: 22px;
+    background: linear-gradient(145deg,#ffc3d9,#ec82ad);
+    box-shadow: 0 6px 0 #d36d9b;
+}
+
+.screen {
+    padding: 8px;
+}
+
+.display-image {
+    height: 105px;
+}
+
+.panel-title {
+    font-size: 10px;
+    margin: 12px 0;
+}
+
+.device-projects {
+    gap: 5px;
+}
+
+.device-project img {
+    height: 42px;
+}
+
+.device-project span {
+    font-size: 7px;
+}
+
+/* DECORATIVE BUTTONS */
+.controls {
+    padding: 10px 0 0;
+    gap: 15px;
+}
+
+.controls span {
+    width: 19px;
+    height: 19px;
+}
+
+.controls span:first-child {
+    width: 29px;
+    height: 12px;
+}
+
+/* GALLERY SECTIONS */
+.gallery-section {
+    width: 100%;
+    padding: 20px 0 0;
+    padding-left: 0;
+}
+
+/* FIRST GALLERY */
+.gallery-section:nth-of-type(2) {
+    height: 440px;
+}
+
+/* PHOTOGRAPHY */
+.gallery-section:nth-of-type(3) {
+    height: 195px;
+    padding-top: 10px;
+}
+
+/* DRAWINGS */
+.gallery-section:nth-of-type(4) {
+    padding-top: 10px;
+    min-height: 240px;
+}
+
+.gallery-heading {
+    font-size: 12px;
+    font-weight: normal;
+    color: black;
+    margin: 0 0 12px;
+    padding-left: 0;
+}
+
+.gallery-heading span {
+    color: #e59cbe;
+}
+
+/* GALLERY SLIDERS */
+.slider-wrapper {
+    width: 100%;
+    gap: 0;
+}
+
+.slider {
+    gap: 25px;
+    padding: 5px 0 15px;
+}
+
+.photo-card {
+    flex: 0 0 140px;
+    height: 140px;
+    border-radius: 19px;
+    background: #cbd4db;
+    box-shadow: none;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* PHOTOGRAPHY AND DRAWING THUMBNAILS */
+.gallery-section:nth-of-type(3) .photo-card,
+.gallery-section:nth-of-type(4) .photo-card {
+    flex-basis: 110px;
+    height: 110px;
+}
+
+.slide-btn {
+    width: 30px;
+    height: 30px;
+}
+
+/* NOTES */
+.section-note {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 20px;
+    color: black;
+}
+
+/* FOOTER */
+.footer {
+    padding: 30px;
+}
+
+/* MOBILE */
+@media(max-width: 750px) {
+
+    .hero {
+        height: 850px;
+    }
+
+    .intro {
+        top: 90px;
+        left: 5%;
+    }
+
+    .device {
+        top: 440px;
+        right: 5%;
+        width: 225px;
+    }
+
+    .gallery-section:nth-of-type(2) {
+        height: 370px;
+    }
+
+    .gallery-section:nth-of-type(3) {
+        height: 190px;
+    }
+
+    .photo-card {
+        flex-basis: 120px;
+        height: 120px;
+    }
+
+    .gallery-section:nth-of-type(3) .photo-card,
+    .gallery-section:nth-of-type(4) .photo-card {
+        flex-basis: 100px;
+        height: 100px;
+    }
+}
