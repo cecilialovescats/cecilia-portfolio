@@ -39,7 +39,7 @@ body {
   height: 100%;
   right: 0;
   top: 0;
-  transform-origin: left;
+  transform-origin: left center;
   transition: transform 1s ease;
   transform-style: preserve-3d;
   cursor: pointer;
@@ -134,6 +134,11 @@ button:hover {
   background: #c7cdb3;
 }
 
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 #pageNumber {
   font-size: 14px;
 }
@@ -183,10 +188,10 @@ button:hover {
 
 <div class="book" id="book">
 
- 
-  <div class="page" style="z-index: 12;">
+
+  <div class="page">
     <div class="front">
-      <img src="images/art (1).png" alt="Magazine cover">
+      <img src="images/art (1).png" alt="Cover">
     </div>
     <div class="back title-page">
       Doodles Magazine
@@ -194,9 +199,10 @@ button:hover {
     </div>
   </div>
 
-  <div class="page" style="z-index: 11;">
+  
+  <div class="page">
     <div class="front">
-      <img src="images/bee.png" alt="Bee drawing">
+      <img src="images/bee.png" alt="Bee">
       <div class="caption">bee?</div>
     </div>
     <div class="back">
@@ -205,10 +211,10 @@ button:hover {
     </div>
   </div>
 
-
-  <div class="page" style="z-index: 10;">
+  
+  <div class="page">
     <div class="front">
-      <img src="images/Screenshot_22-4-2026_94926_.jpeg" alt="Dream vacation">
+      <img src="images/Screenshot_22-4-2026_94926_.jpeg" alt="Vacation">
       <div class="caption">dream vacation</div>
     </div>
     <div class="back">
@@ -217,7 +223,7 @@ button:hover {
     </div>
   </div>
 
-  <div class="page" style="z-index: 9;">
+  <div class="page">
     <div class="front">
       <img src="images/Screenshot_22-4-2026_9506_.jpeg" alt="Blossom">
       <div class="caption">blossom</div>
@@ -228,8 +234,8 @@ button:hover {
     </div>
   </div>
 
-
-  <div class="page" style="z-index: 8;">
+  
+  <div class="page">
     <div class="front">
       <img src="images/ray.jpg" alt="Sea life">
       <div class="caption">sea life</div>
@@ -240,7 +246,8 @@ button:hover {
     </div>
   </div>
 
-  <div class="page" style="z-index: 7;">
+  
+  <div class="page">
     <div class="front">
       <img src="images/snail.jpg" alt="Snail">
       <div class="caption">hi!</div>
@@ -251,7 +258,7 @@ button:hover {
     </div>
   </div>
 
-  <div class="page" style="z-index: 6;">
+  <div class="page">
     <div class="front">
       <img src="images/dino.jpg" alt="Dinosaur">
       <div class="caption">old day</div>
@@ -262,8 +269,7 @@ button:hover {
     </div>
   </div>
 
-
-  <div class="page" style="z-index: 5;">
+  <div class="page">
     <div class="front">
       <img src="images/Screenshot_22-4-2026_95124_.jpeg" alt="At sea">
       <div class="caption">at sea</div>
@@ -274,8 +280,8 @@ button:hover {
     </div>
   </div>
 
-
-  <div class="page" style="z-index: 4;">
+ 
+  <div class="page">
     <div class="front">
       <img src="images/Screenshot_22-4-2026_95124_.jpeg" alt="At sea">
       <div class="caption">at sea</div>
@@ -287,6 +293,7 @@ button:hover {
   </div>
 
 </div>
+
 
 <div class="navigation">
   <button id="prev">← Previous</button>
@@ -307,11 +314,15 @@ const pages = document.querySelectorAll(".page");
 const nextBtn = document.getElementById("next");
 const prevBtn = document.getElementById("prev");
 const pageNumber = document.getElementById("pageNumber");
+const book = document.getElementById("book");
 
 let currentPage = 0;
+let isAnimating = false;
 
 function updateBook() {
+
   pages.forEach((page, index) => {
+
     if (index < currentPage) {
       page.classList.add("flipped");
       page.style.zIndex = index + 1;
@@ -319,6 +330,7 @@ function updateBook() {
       page.classList.remove("flipped");
       page.style.zIndex = pages.length - index + 10;
     }
+
   });
 
   pageNumber.textContent =
@@ -330,28 +342,53 @@ function updateBook() {
   nextBtn.disabled = currentPage === pages.length;
 }
 
-nextBtn.addEventListener("click", () => {
-  if (currentPage < pages.length) {
+function turnPage(direction) {
+
+  if (isAnimating) return;
+
+  if (direction === "next" && currentPage < pages.length) {
     currentPage++;
-    updateBook();
   }
+  else if (direction === "prev" && currentPage > 0) {
+    currentPage--;
+  }
+  else {
+    return;
+  }
+
+  isAnimating = true;
+  updateBook();
+
+  setTimeout(() => {
+    isAnimating = false;
+  }, 1050);
+}
+
+nextBtn.addEventListener("click", () => {
+  turnPage("next");
 });
 
 prevBtn.addEventListener("click", () => {
-  if (currentPage > 0) {
-    currentPage--;
-    updateBook();
-  }
+  turnPage("prev");
 });
 
+book.addEventListener("click", (event) => {
 
-document.getElementById("book").addEventListener("click", (event) => {
-  if (event.target.closest(".page")) {
-    if (currentPage < pages.length) {
-      currentPage++;
-      updateBook();
-    }
+  if (isAnimating) return;
+
+  const page = event.target.closest(".page");
+
+  if (!page) return;
+
+  const rect = book.getBoundingClientRect();
+  const clickX = event.clientX - rect.left;
+
+  if (clickX > rect.width / 2) {
+    turnPage("next");
+  } else {
+    turnPage("prev");
   }
+
 });
 
 updateBook();
@@ -359,3 +396,4 @@ updateBook();
 
 </body>
 </html>
+
