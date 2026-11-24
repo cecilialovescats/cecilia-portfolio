@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cecilia</title>
+<title>Cecilia ♡ Portfolio</title>
 
 <style>
 * {
@@ -33,21 +33,19 @@ body {
     background: linear-gradient(145deg,#ffb3cd,#ed7fa8);
     padding: 12px;
     border-radius: 32px;
-    box-shadow:
-        0 8px 0 #ce6d96,
-        0 18px 30px #b66d8950;
+    box-shadow: 0 8px 0 #ce6d96,
+                0 18px 30px #b66d8950;
 }
 
 .screen {
-    height: 390px;
+    min-height: 390px;
     background: #a9bdf2;
     border: 5px solid #f7a6c4;
     border-radius: 25px;
     position: relative;
-    overflow: visible;
 }
 
-
+/* LARGE ROUND IMAGE DISPLAY */
 .preview-frame {
     position: absolute;
     z-index: 3;
@@ -56,14 +54,10 @@ body {
     width: 440px;
     height: 440px;
     border-radius: 50%;
-    background: linear-gradient(145deg,#fff,#e8e9ed);
+    background: #fff;
     border: 12px solid #e7e9eb;
-    box-shadow:
-        inset 0 0 15px #aaa,
-        0 5px 12px #7775;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    box-shadow: inset 0 0 15px #aaa,
+                0 5px 12px #7775;
     overflow: hidden;
 }
 
@@ -80,7 +74,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity .25s ease;
+    transition: opacity .3s ease;
 }
 
 .preview-decoration {
@@ -108,13 +102,13 @@ body {
     pointer-events: none;
 }
 
-
+/* RIGHT PROJECT PANEL */
 .menu {
     position: absolute;
     right: 48px;
     top: 15px;
     width: 195px;
-    height: 325px;
+    min-height: 325px;
     border-radius: 25px;
     background: linear-gradient(145deg,#aaa2e7,#c0b5f0);
     padding: 12px;
@@ -140,7 +134,7 @@ body {
     height: 67px;
     border-radius: 19px;
     border: 3px solid #ffffff90;
-    background: white;
+    background: linear-gradient(145deg,#fff,#fff0f7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,12 +142,17 @@ body {
     text-decoration: none;
     color: #a778a6;
     box-shadow: inset 0 2px 5px #ddd;
-    transition: .2s;
+    transition: .25s;
+    cursor: pointer;
 }
 
-.category:hover {
+.category:hover,
+.category:focus-visible {
     transform: scale(1.07);
     border-color: white;
+    background: white;
+    box-shadow: 0 4px 10px #7774;
+    outline: none;
 }
 
 .category span {
@@ -165,6 +164,7 @@ body {
     font-weight: bold;
 }
 
+/* DECORATIVE SIDE BUTTONS */
 .side-buttons {
     position: absolute;
     right: 8px;
@@ -187,14 +187,13 @@ body {
     font-size: 16px;
 }
 
-
+/* BOTTOM TOY BUTTONS */
 .controls {
     display: flex;
     justify-content: center;
     gap: 32px;
     padding: 15px;
     position: relative;
-    z-index: 4;
 }
 
 .controls span {
@@ -214,51 +213,7 @@ body {
     border-radius: 20px;
 }
 
-.heading {
-    text-align: center;
-    margin-top: 35px;
-    color: white;
-    font-size: 23px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    -webkit-text-stroke: 1px #292929;
-    text-shadow: 2px 3px #888;
-}
-
-.projects {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    margin-top: 20px;
-}
-
-.project {
-    text-decoration: none;
-    text-align: center;
-    transition: .25s;
-}
-
-.project img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    filter: drop-shadow(2px 3px 2px #7775);
-    transition: .25s;
-}
-
-.project:hover img {
-    transform: translateY(-9px) rotate(-8deg) scale(1.12);
-}
-
-.project small {
-    display: block;
-    font-size: 10px;
-    color: #a4779b;
-    font-weight: bold;
-    margin-top: 5px;
-}
-
+/* FOOTER */
 footer {
     text-align: center;
     color: #c18eae;
@@ -267,10 +222,13 @@ footer {
     margin-top: 35px;
 }
 
+/* MOBILE RESPONSIVE */
 @media(max-width:650px) {
+    body {
+        padding: 25px 12px;
+    }
+
     .screen {
-        height: auto;
-        min-height: 0;
         padding: 15px;
         display: flex;
         flex-direction: column;
@@ -281,7 +239,7 @@ footer {
         position: relative;
         left: auto;
         top: auto;
-        width: min(100%, 340px);
+        width: min(100%,340px);
         height: auto;
         aspect-ratio: 1;
         margin: 0 auto;
@@ -292,25 +250,19 @@ footer {
         top: auto;
         right: auto;
         width: 100%;
-        height: auto;
+        min-height: auto;
     }
 
     .categories {
         grid-template-columns: repeat(4,1fr);
     }
 
+    .category {
+        height: 65px;
+    }
+
     .side-buttons {
         display: none;
-    }
-
-    .projects {
-        flex-wrap: wrap;
-        gap: 18px;
-    }
-
-    .project img {
-        width: 48px;
-        height: 48px;
     }
 }
 </style>
@@ -324,9 +276,8 @@ footer {
 
         <div class="screen">
 
-    
+            <!-- MAIN IMAGE PREVIEW -->
             <div class="preview-frame">
-
                 <div class="preview-inner">
 
                     <img
@@ -345,63 +296,94 @@ footer {
                     </div>
 
                 </div>
-
             </div>
 
             <div class="menu">
 
-                <div class="menu-title">MY LITTLE WORLD</div>
+                <div class="menu-title">MY LITTLE WORLD ♡</div>
 
                 <div class="categories">
 
-                    <a href="about.html" class="category">
-                        <span>♡</span>
-                        <small>ABOUT</small>
+                    <a href="font.html"
+                       class="category project"
+                       data-preview="pic2.jpg"
+                       data-title="FONTS">
+
+                        <span>🎀</span>
+                        <small>FONTS</small>
                     </a>
 
-                    <a href="font.html" class="category">
-                        <span>✿</span>
-                        <small>fonts</small>
-                    </a>
+                    <a href="design.html"
+                       class="category project"
+                       data-preview="pic3.jpg"
+                       data-title="DESIGN">
 
-                    <a href="design.html" class="category">
                         <span>🎨</span>
                         <small>DESIGN</small>
                     </a>
 
-                    <a href="photo.html" class="category">
+                    <a href="photography.html"
+                       class="category project"
+                       data-preview="pic4.jpg"
+                       data-title="PHOTOGRAPHY">
+
                         <span>📷</span>
                         <small>PHOTO</small>
                     </a>
 
-                    <a href="contact.html" class="category">
-                        <span>✉</span>
-                        <small>CONTACT</small>
-                    </a>
+                    <a href="drawing.html"
+                       class="category project"
+                       data-preview="pic5.jpg"
+                       data-title="art">
 
-                    <a href="me.html" class="category">
-                        <span>📄</span>
-                        <small>about me</small>
-                    </a>
-
-                    <a href="drawing.html" class="category">
                         <span>🦋</span>
                         <small>ART</small>
                     </a>
 
-                    <a href="more.html" class="category">
-                        <span>☆</span>
+                    <a href="project5.html"
+                       class="category project"
+                       data-preview="pic6.jpg"
+                       data-title="DRAWINGS">
+
+                        <span>🌸</span>
+                        <small>DRAWINGS</small>
+                    </a>
+
+                    <a href="project6.html"
+                       class="category project"
+                       data-preview="pic7.jpg"
+                       data-title="CREATIVE WORK">
+
+                        <span>🧸</span>
+                        <small>CREATIVE</small>
+                    </a>
+
+                    <a href="me.html"
+                       class="category project"
+                       data-preview="pic8.jpg"
+                       data-title="PERSONAL PROJECTS">
+
+                        <span>🍒</span>
+                        <small>PERSONAL</small>
+                    </a>
+
+                    <a href="project8.html"
+                       class="category project"
+                       data-preview="pic9.jpg"
+                       data-title="MORE WORK">
+
+                        <span>⭐</span>
                         <small>MORE</small>
                     </a>
 
                 </div>
-
             </div>
+
 
             <div class="side-buttons">
                 <a href="about.html">♡</a>
-                <a href="works.html">▦</a>
-                <a href="contact.html">☻</a>
+                <a href="contact.html">✉</a>
+                <a href="me.html">☻</a>
             </div>
 
         </div>
@@ -411,57 +393,6 @@ footer {
             <span></span>
             <span></span>
         </div>
-
-    </div>
-    
-    <h2 class="heading">MY PROJECTS</h2>
-
-    <div class="projects">
-
-        <a href="project1.html"
-           class="project"
-           data-preview="pic2.jpg"
-           data-title="PROJECT ONE">
-
-            <img src="pic2.jpg" alt="Project one">
-            <small>PROJECT 01</small>
-        </a>
-
-        <a href="project2.html"
-           class="project"
-           data-preview="images/project2.jpg"
-           data-title="PROJECT TWO">
-
-            <img src="images/icon2.png" alt="Project two">
-            <small>PROJECT 02</small>
-        </a>
-
-        <a href="project3.html"
-           class="project"
-           data-preview="images/project3.jpg"
-           data-title="PROJECT THREE">
-
-            <img src="images/icon3.png" alt="Project three">
-            <small>PROJECT 03</small>
-        </a>
-
-        <a href="project4.html"
-           class="project"
-           data-preview="images/project4.jpg"
-           data-title="PROJECT FOUR">
-
-            <img src="images/icon4.png" alt="Project four">
-            <small>PROJECT 04</small>
-        </a>
-
-        <a href="project5.html"
-           class="project"
-           data-preview="images/project5.jpg"
-           data-title="PROJECT FIVE">
-
-            <img src="images/icon5.png" alt="Project five">
-            <small>PROJECT 05</small>
-        </a>
 
     </div>
 
@@ -476,26 +407,44 @@ const caption = document.getElementById("caption");
 const originalImage = "pic1.jpg";
 const originalCaption = "WELCOME TO MY WORLD ♡";
 
-document.querySelectorAll(".project").forEach(project => {
+const projects = document.querySelectorAll(".project");
 
-    project.addEventListener("mouseenter", () => {
+function showProject(project) {
+    preview.style.opacity = "0";
+
+    setTimeout(() => {
         preview.src = project.dataset.preview;
         caption.textContent = project.dataset.title;
+        preview.style.opacity = "1";
+    }, 150);
+}
+
+function resetPreview() {
+    preview.style.opacity = "0";
+
+    setTimeout(() => {
+        preview.src = originalImage;
+        caption.textContent = originalCaption;
+        preview.style.opacity = "1";
+    }, 150);
+}
+
+projects.forEach(project => {
+
+    project.addEventListener("mouseenter", () => {
+        showProject(project);
     });
 
     project.addEventListener("mouseleave", () => {
-        preview.src = originalImage;
-        caption.textContent = originalCaption;
+        resetPreview();
     });
 
     project.addEventListener("focus", () => {
-        preview.src = project.dataset.preview;
-        caption.textContent = project.dataset.title;
+        showProject(project);
     });
 
     project.addEventListener("blur", () => {
-        preview.src = originalImage;
-        caption.textContent = originalCaption;
+        resetPreview();
     });
 
 });
