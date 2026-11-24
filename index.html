@@ -4,10 +4,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Cecilia ♡ Portfolio</title>
 
 <style>
+:root {
+    --pink: #f3a6c6;
+    --lavender: #a9bdf2;
+    --placeholder: #cbd4db;
+    --text-pink: #a4779b;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,90 +25,89 @@ html {
 }
 
 body {
-    font-family: "Trebuchet MS", sans-serif;
-    background: url("bgph.png") center top / 100% auto repeat-y;
     min-height: 100vh;
     overflow-x: hidden;
-    color: #333;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background-color: #fcecf4;
+    background-image: url("bgph.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
 }
 
+/* FIRST PAGE */
 
 .hero {
-    min-height: 530px;
+    position: relative;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 390px;
-    align-items: center;
-    gap: 30px;
-    padding: 45px 6%;
+    height: clamp(850px, 116vw, 960px);
 }
 
 .intro {
-    align-self: start;
-    padding-top: 55px;
-    text-align: left;
+    position: absolute;
+    top: clamp(95px, 15vw, 145px);
+    left: 5.5%;
+    z-index: 1;
 }
 
 .intro h1 {
-    font-size: clamp(55px, 8vw, 90px);
+    font-size: clamp(52px, 8.5vw, 82px);
+    line-height: 1;
     font-weight: 400;
-    color: #000;
     letter-spacing: -3px;
+    color: #050505;
 }
 
-.intro p {
-    margin-top: 12px;
-    font-size: 16px;
-    color: #a46e94;
-    letter-spacing: 2px;
-}
-
+.intro p,
 .intro .stars {
-    font-size: 30px;
-    margin-top: 20px;
-    letter-spacing: 10px;
+    display: none;
 }
 
+/* RETRO DEVICE */
 
 .device {
-    width: 100%;
-    background: linear-gradient(145deg,#ffc3d9,#ec82ad);
-    padding: 12px;
-    border-radius: 25px;
-    border: 2px solid white;
-    box-shadow:
-        0 8px 0 #d36d9b,
-        0 15px 25px #85546b55;
+    position: absolute;
+    top: clamp(470px, 62vw, 515px);
+    right: 23%;
+    width: 225px;
+    padding: 8px;
+    border: 2px solid #fff4fa;
+    border-radius: 22px;
+    background: linear-gradient(145deg, #ffc3d9, #ec82ad);
+    box-shadow: 0 6px 0 #d36d9b,
+                0 12px 22px #85546b40;
+    z-index: 2;
 }
 
 .screen {
+    padding: 8px;
+    border: 4px solid #f8b3cf;
+    border-radius: 16px;
     background: #a9bdf2;
-    border: 5px solid #f8b3cf;
-    border-radius: 19px;
-    padding: 12px;
 }
 
 .display {
-    background: white;
-    border: 6px solid #e7e9ec;
-    border-radius: 19px;
-    padding: 8px;
-    box-shadow: inset 0 0 10px #bbb;
+    padding: 7px;
+    border: 5px solid #e7e9ec;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: inset 0 0 8px #bbb;
 }
 
 .display-image {
-    height: 180px;
-    overflow: hidden;
     position: relative;
+    height: 105px;
+    overflow: hidden;
+    border-radius: 10px;
     background: #f9e9f3;
-    border-radius: 12px;
 }
 
 .display-image img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity .3s;
+    transition: opacity .2s ease;
 }
 
 .display-label {
@@ -110,99 +115,141 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 10px;
-    text-align: center;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    padding: 7px 3px;
     color: #a36e9b;
-    background: #ffffffd9;
+    background: #ffffffdf;
+    text-align: center;
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .panel-title {
-    text-align: center;
+    margin: 11px 0 9px;
     color: white;
-    font-size: 15px;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px #897ab9;
-    margin: 15px 0 12px;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px #897ab9;
 }
 
 .device-projects {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 8px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
 }
 
 .device-project {
-    background: white;
-    border: 3px solid #ffffffb0;
-    border-radius: 12px;
-    text-decoration: none;
+    min-width: 0;
     padding: 4px;
+    border: 2px solid #ffffffc9;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #fff, #fff0f7);
     text-align: center;
-    transition: .2s;
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
 }
 
-.device-project:hover {
-    transform: scale(1.06);
+.device-project:hover,
+.device-project:focus-visible {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 4px 9px #735b8c55;
+    outline: none;
 }
 
 .device-project img {
+    display: block;
     width: 100%;
-    height: 48px;
+    height: 42px;
+    border-radius: 6px;
     object-fit: cover;
-    border-radius: 7px;
-    background: #cbd4db;
+    background: var(--placeholder);
 }
 
 .device-project span {
     display: block;
-    font-size: 9px;
-    color: #a4779b;
+    padding: 4px 0 1px;
+    color: var(--text-pink);
+    font-size: 7px;
     font-weight: bold;
-    padding: 5px 0 2px;
+    overflow-wrap: anywhere;
 }
 
 .controls {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    padding: 13px 0 2px;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0 1px;
 }
 
 .controls span {
-    width: 26px;
-    height: 26px;
+    display: block;
+    width: 19px;
+    height: 19px;
+    border: 2px solid #a3e68f;
     border-radius: 50%;
-    background: linear-gradient(145deg,#a4f47f,#58d64e);
-    border: 3px solid #a3e68f;
-    box-shadow: 0 3px 4px #7775;
+    background: linear-gradient(145deg, #a4f47f, #58d64e);
+    box-shadow: 0 2px 4px #7775;
 }
 
 .controls span:first-child {
-    width: 38px;
-    height: 17px;
-    margin-top: 5px;
+    width: 29px;
+    height: 12px;
+    border-radius: 20px;
 }
 
+/* GALLERY SECTIONS */
 
 .gallery-section {
-    padding: 45px 5%;
+    position: relative;
     width: 100%;
+    padding: 0;
 }
 
 .gallery-heading {
-    font-size: 20px;
-    font-weight: bold;
-    color: #222;
-    margin-bottom: 18px;
-    letter-spacing: 1px;
+    margin: 0 0 14px;
+    color: #171717;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: .3px;
 }
 
 .gallery-heading span {
     color: #d887b3;
 }
+
+/* WORK GALLERY */
+
+.work-section {
+    min-height: 340px;
+    padding-top: 5px;
+}
+
+.work-section .gallery-heading {
+    padding-left: 28%;
+}
+
+/* PHOTOGRAPHY */
+
+.photo-section {
+    min-height: 205px;
+    padding-top: 0;
+}
+
+.photo-section .gallery-heading,
+.drawing-section .gallery-heading {
+    padding-left: 36%;
+}
+
+/* DRAWINGS */
+
+.drawing-section {
+    min-height: 250px;
+    padding-top: 0;
+}
+
+/* SLIDERS */
 
 .slider-wrapper {
     position: relative;
@@ -214,188 +261,247 @@ body {
 .slider {
     display: flex;
     gap: 22px;
+    width: 100%;
     overflow-x: auto;
+    padding: 5px 0 14px;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    padding: 5px 3px 15px;
-    width: 100%;
+    overscroll-behavior-x: contain;
 }
 
 .slider::-webkit-scrollbar {
     display: none;
 }
 
+/* IMAGE CARDS */
 
 .photo-card {
-    flex: 0 0 155px;
-    height: 155px;
-    background: #cbd4db;
-    border-radius: 20px;
-    overflow: hidden;
-    scroll-snap-align: start;
-    display: block;
     position: relative;
+    display: block;
+    flex: 0 0 140px;
+    height: 140px;
+    overflow: hidden;
+    border-radius: 19px;
+    background: var(--placeholder);
     text-decoration: none;
-    transition: .3s;
-    box-shadow: 0 3px 10px #7772;
+    scroll-snap-align: start;
+    transition: transform .22s, box-shadow .22s;
 }
 
-.photo-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 15px #7774;
+.photo-card:hover,
+.photo-card:focus-visible {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 14px #755b8050;
+    outline: none;
 }
 
 .photo-card img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    background: var(--placeholder);
 }
 
-.photo-card .photo-name {
+.photo-name {
     position: absolute;
+    right: 0;
     bottom: 0;
     left: 0;
-    width: 100%;
-    padding: 12px 5px 9px;
-    text-align: center;
-    background: linear-gradient(transparent,#0009);
+    padding: 15px 5px 8px;
     color: white;
-    font-size: 11px;
+    background: linear-gradient(transparent, #0009);
+    text-align: center;
+    font-size: 10px;
     opacity: 0;
-    transition: .3s;
+    transition: opacity .2s;
 }
 
-.photo-card:hover .photo-name {
+.photo-card:hover .photo-name,
+.photo-card:focus-visible .photo-name {
     opacity: 1;
 }
 
+/* SMALLER LOWER GALLERIES */
+
+.photo-section .photo-card,
+.drawing-section .photo-card {
+    flex-basis: 110px;
+    height: 110px;
+}
+
+.section-note {
+    margin-top: 20px;
+    margin-left: 29%;
+    max-width: 180px;
+    color: #222;
+    font-size: 11px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* SLIDE ARROWS */
 
 .slide-btn {
-    flex-shrink: 0;
-    width: 35px;
-    height: 35px;
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    display: grid;
+    width: 31px;
+    height: 31px;
+    place-items: center;
     border: 2px solid white;
     border-radius: 50%;
-    background: #f4a6c7;
+    background: #f3a6c6ef;
     color: white;
-    font-size: 20px;
+    font-size: 21px;
+    line-height: 1;
     cursor: pointer;
-    z-index: 2;
-    box-shadow: 0 3px 6px #7774;
-    transition: .2s;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: opacity .2s, background .2s;
+}
+
+.slider-wrapper:hover .slide-btn,
+.slider-wrapper:focus-within .slide-btn {
+    opacity: 1;
 }
 
 .slide-btn:hover {
     background: #d989b2;
-    transform: scale(1.1);
 }
 
 .slide-btn.prev {
-    margin-right: 10px;
+    left: 8px;
 }
 
 .slide-btn.next {
-    margin-left: 10px;
+    right: 8px;
 }
 
-
-.section-note {
-    font-size: 12px;
-    color: #555;
-    margin-top: 12px;
-    letter-spacing: .5px;
-}
-
-.gallery-section:nth-of-type(3) {
-    padding-top: 20px;
-}
-
-.gallery-section:nth-of-type(4) {
-    padding-top: 20px;
-}
+/* FOOTER */
 
 .footer {
-    padding: 35px 15px;
-    text-align: center;
-    font-size: 12px;
+    padding: 25px 12px 35px;
     color: #a46e94;
+    text-align: center;
+    font-size: 11px;
     letter-spacing: 2px;
 }
 
+/* MOBILE RESPONSIVE */
 
-@media(max-width:750px) {
+@media (max-width: 750px) {
 
     body {
         background-size: auto 100%;
-        background-attachment: scroll;
+        background-position: center top;
+        background-repeat: repeat-y;
     }
 
     .hero {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        padding: 25px 18px;
+        height: 850px;
     }
 
     .intro {
-        padding-top: 10px;
-        text-align: center;
+        top: 85px;
+        left: 5%;
     }
 
     .intro h1 {
-        font-size: 55px;
+        font-size: clamp(48px, 12vw, 65px);
     }
 
     .device {
-        max-width: 420px;
-        margin: auto;
+        top: 430px;
+        right: 6%;
+        width: 220px;
     }
 
-    .gallery-section {
-        padding: 30px 18px;
+    .work-section {
+        min-height: 330px;
+    }
+
+    .work-section .gallery-heading {
+        padding-left: 8%;
+    }
+
+    .photo-section .gallery-heading,
+    .drawing-section .gallery-heading {
+        padding-left: 8%;
+    }
+
+    .section-note {
+        margin-left: 8%;
+        text-align: left;
     }
 
     .photo-card {
-        flex-basis: 135px;
-        height: 135px;
+        flex-basis: 125px;
+        height: 125px;
+    }
+
+    .photo-section .photo-card,
+    .drawing-section .photo-card {
+        flex-basis: 105px;
+        height: 105px;
     }
 
     .slide-btn {
-        width: 30px;
-        height: 30px;
+        opacity: 1;
     }
-
 }
 
-@media(max-width:420px) {
-    .photo-card {
-        flex-basis: 120px;
-        height: 120px;
+@media (max-width: 420px) {
+
+    .device {
+        right: 5%;
+        width: 210px;
     }
 
     .slider {
-        gap: 12px;
+        gap: 14px;
+    }
+
+    .photo-card {
+        flex-basis: 112px;
+        height: 112px;
+    }
+
+    .photo-section .photo-card,
+    .drawing-section .photo-card {
+        flex-basis: 95px;
+        height: 95px;
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .slider,
+    .photo-card,
+    .device-project,
+    .display-image img {
+        transition: none;
+    }
+}
 </style>
 </head>
 
 <body>
 
+<!-- FIRST SCREEN -->
 
 <section class="hero">
 
     <div class="intro">
-
         <h1>welcome</h1>
-
-        <p>WELCOME TO MY LITTLE WORLD ♡</p>
-
-        <div class="stars">✿ ☆ ♡ ☆ ✿</div>
-
     </div>
+
+    <!-- RETRO PROJECT SELECTOR -->
 
     <div class="device">
 
@@ -428,42 +534,48 @@ body {
                 <a href="fonts.html" class="device-project"
                    data-image="images/fonts.jpg"
                    data-title="MY FONTS">
-                    <img src="images/fonts.jpg" alt="Fonts">
+
+                    <img src="images/fonts.jpg" alt="Fonts project">
                     <span>FONTS</span>
                 </a>
 
                 <a href="design.html" class="device-project"
                    data-image="images/design.jpg"
                    data-title="MY DESIGNS">
-                    <img src="images/design.jpg" alt="Design">
+
+                    <img src="images/design.jpg" alt="Design project">
                     <span>DESIGN</span>
                 </a>
 
                 <a href="photo.html" class="device-project"
                    data-image="images/photo.jpg"
                    data-title="PHOTOGRAPHY">
-                    <img src="images/photo.jpg" alt="Photography">
+
+                    <img src="images/photo.jpg" alt="Photography project">
                     <span>PHOTO</span>
                 </a>
 
                 <a href="drawing.html" class="device-project"
                    data-image="images/drawing.jpg"
                    data-title="DRAWINGS">
-                    <img src="images/drawing.jpg" alt="Drawings">
+
+                    <img src="images/drawing.jpg" alt="Drawing project">
                     <span>DRAWING</span>
                 </a>
 
                 <a href="art.html" class="device-project"
                    data-image="images/art.jpg"
                    data-title="MY ART">
-                    <img src="images/art.jpg" alt="Art">
+
+                    <img src="images/art.jpg" alt="Art project">
                     <span>ART</span>
                 </a>
 
                 <a href="creative.html" class="device-project"
                    data-image="images/creative.jpg"
                    data-title="CREATIVE WORK">
-                    <img src="images/creative.jpg" alt="Creative">
+
+                    <img src="images/creative.jpg" alt="Creative work">
                     <span>CREATIVE</span>
                 </a>
 
@@ -471,7 +583,7 @@ body {
 
         </div>
 
-        <div class="controls">
+        <div class="controls" aria-hidden="true">
             <span></span>
             <span></span>
             <span></span>
@@ -482,9 +594,9 @@ body {
 </section>
 
 
+<!-- MY WORK IN DETAILS -->
 
-
-<section class="gallery-section">
+<section class="gallery-section work-section">
 
     <h2 class="gallery-heading">
         my work in details <span>♡</span>
@@ -492,8 +604,9 @@ body {
 
     <div class="slider-wrapper">
 
-        <button class="slide-btn prev" data-target="workSlider"
-                aria-label="Previous projects">‹</button>
+        <button class="slide-btn prev"
+                data-target="workSlider"
+                aria-label="Scroll projects left">‹</button>
 
         <div class="slider" id="workSlider">
 
@@ -529,8 +642,9 @@ body {
 
         </div>
 
-        <button class="slide-btn next" data-target="workSlider"
-                aria-label="Next projects">›</button>
+        <button class="slide-btn next"
+                data-target="workSlider"
+                aria-label="Scroll projects right">›</button>
 
     </div>
 
@@ -541,9 +655,9 @@ body {
 </section>
 
 
+<!-- PHOTOGRAPHY -->
 
-
-<section class="gallery-section">
+<section class="gallery-section photo-section">
 
     <h2 class="gallery-heading">
         photography <span>✿</span>
@@ -551,8 +665,9 @@ body {
 
     <div class="slider-wrapper">
 
-        <button class="slide-btn prev" data-target="photoSlider"
-                aria-label="Previous photos">‹</button>
+        <button class="slide-btn prev"
+                data-target="photoSlider"
+                aria-label="Scroll photography left">‹</button>
 
         <div class="slider" id="photoSlider">
 
@@ -582,16 +697,18 @@ body {
 
         </div>
 
-        <button class="slide-btn next" data-target="photoSlider"
-                aria-label="Next photos">›</button>
+        <button class="slide-btn next"
+                data-target="photoSlider"
+                aria-label="Scroll photography right">›</button>
 
     </div>
 
 </section>
 
 
+<!-- DRAWINGS -->
 
-<section class="gallery-section">
+<section class="gallery-section drawing-section">
 
     <h2 class="gallery-heading">
         drawings <span>♡</span>
@@ -599,8 +716,9 @@ body {
 
     <div class="slider-wrapper">
 
-        <button class="slide-btn prev" data-target="drawingSlider"
-                aria-label="Previous drawings">‹</button>
+        <button class="slide-btn prev"
+                data-target="drawingSlider"
+                aria-label="Scroll drawings left">‹</button>
 
         <div class="slider" id="drawingSlider">
 
@@ -630,8 +748,9 @@ body {
 
         </div>
 
-        <button class="slide-btn next" data-target="drawingSlider"
-                aria-label="Next drawings">›</button>
+        <button class="slide-btn next"
+                data-target="drawingSlider"
+                aria-label="Scroll drawings right">›</button>
 
     </div>
 
@@ -645,6 +764,7 @@ body {
 
 <script>
 
+// DEVICE IMAGE PREVIEW
 
 const mainPreview = document.getElementById("mainPreview");
 const previewTitle = document.getElementById("previewTitle");
@@ -652,39 +772,85 @@ const previewTitle = document.getElementById("previewTitle");
 const defaultImage = "images/profile.jpg";
 const defaultTitle = "WELCOME TO MY WORLD ♡";
 
+let previewVersion = 0;
+
+function setPreview(image, title) {
+
+    const version = ++previewVersion;
+
+    mainPreview.style.opacity = "0";
+
+    setTimeout(() => {
+
+        if (version !== previewVersion) return;
+
+        mainPreview.src = image;
+        previewTitle.textContent = title;
+        mainPreview.style.opacity = "1";
+
+    }, 120);
+}
+
 document.querySelectorAll(".device-project").forEach(project => {
 
-    function showPreview() {
-        mainPreview.src = project.dataset.image;
-        previewTitle.textContent = project.dataset.title;
-    }
+    const show = () => {
+        setPreview(
+            project.dataset.image,
+            project.dataset.title
+        );
+    };
 
-    function resetPreview() {
-        mainPreview.src = defaultImage;
-        previewTitle.textContent = defaultTitle;
-    }
+    const reset = () => {
+        setPreview(defaultImage, defaultTitle);
+    };
 
-    project.addEventListener("mouseenter", showPreview);
-    project.addEventListener("mouseleave", resetPreview);
+    project.addEventListener("mouseenter", show);
+    project.addEventListener("mouseleave", reset);
 
-    project.addEventListener("focus", showPreview);
-    project.addEventListener("blur", resetPreview);
+    project.addEventListener("focus", show);
+    project.addEventListener("blur", reset);
 
 });
+
+
+// HORIZONTAL SLIDERS
 
 document.querySelectorAll(".slide-btn").forEach(button => {
 
     button.addEventListener("click", () => {
 
-        const slider = document.getElementById(button.dataset.target);
+        const slider = document.getElementById(
+            button.dataset.target
+        );
 
-        const direction = button.classList.contains("next") ? 1 : -1;
+        if (!slider) return;
+
+        const direction =
+            button.classList.contains("next") ? 1 : -1;
+
+        const firstCard = slider.querySelector(".photo-card");
+
+        const gap = 22;
+
+        const step = firstCard
+            ? firstCard.getBoundingClientRect().width + gap
+            : slider.clientWidth * 0.8;
 
         slider.scrollBy({
-            left: direction * (slider.clientWidth * 0.75),
+            left: direction * step * 2,
             behavior: "smooth"
         });
 
+    });
+
+});
+
+
+document.querySelectorAll("img").forEach(img => {
+
+    img.addEventListener("error", () => {
+        img.style.visibility = "hidden";
+        img.setAttribute("aria-label", "Image placeholder");
     });
 
 });
@@ -693,3 +859,4 @@ document.querySelectorAll(".slide-btn").forEach(button => {
 
 </body>
 </html>
+
