@@ -28,10 +28,21 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   font-family: "Trebuchet MS", Arial, sans-serif;
-  background: #fcecf4 url("bgph.png") center top / 100% auto no-repeat;
+  background: #fcecf4;
 }
 
-/* WELCOME SECTION */
+/* FIXED 824px CANVAS */
+
+.site-shell {
+  position: relative;
+  width: min(824px, 100%);
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fcecf4 url("bgph.png") center top / 100% auto repeat-y;
+}
+
+/* WELCOME */
 
 .hero {
   position: relative;
@@ -64,7 +75,7 @@ body {
 .device {
   position: absolute;
   top: 511px;
-  right: 30%;
+  right: 23%;
   width: 225px;
   padding: 8px;
   border: 2px solid #fff4fa;
@@ -193,7 +204,7 @@ body {
   border-radius: 20px;
 }
 
-/* GALLERY SECTIONS */
+/* GALLERIES */
 
 .gallery-section {
   position: relative;
@@ -212,7 +223,7 @@ body {
   color: #d887b3;
 }
 
-/* MY WORK IN DETAILS */
+/* MY WORK */
 
 .work-section {
   height: 929px;
@@ -244,7 +255,7 @@ body {
   text-align: center;
 }
 
-/* HORIZONTAL GALLERIES */
+/* SLIDERS */
 
 .slider-wrapper {
   position: relative;
@@ -316,7 +327,7 @@ body {
   opacity: 1;
 }
 
-/* PHOTOGRAPHY */
+/* PHOTOGRAPHY AND DRAWINGS */
 
 .photo-section {
   height: 230px;
@@ -341,8 +352,6 @@ body {
   height: 110px;
   border-radius: 20px;
 }
-
-/* DRAWINGS */
 
 .drawing-section {
   min-height: 260px;
@@ -405,10 +414,9 @@ body {
 /* MOBILE */
 
 @media (max-width: 650px) {
-  body {
-    background-size: auto 100%;
+  .site-shell {
+    background-size: 100% auto;
     background-position: center top;
-    background-repeat: repeat-y;
   }
 
   .hero {
@@ -489,255 +497,250 @@ body {
 
 <body>
 
-<!-- FIRST SCREEN -->
+<main class="site-shell">
 
-<section class="hero">
+  <!-- WELCOME -->
 
-  <div class="intro">
-    <h1>welcome</h1>
-  </div>
+  <section class="hero">
+    <div class="intro">
+      <h1>welcome</h1>
+    </div>
 
-  <!-- RETRO PROJECT SELECTOR -->
+    <!-- RETRO DEVICE -->
 
-  <div class="device">
+    <div class="device">
+      <div class="screen">
 
-    <div class="screen">
+        <div class="display">
+          <div class="display-image">
+            <img
+              id="mainPreview"
+              src="images/profile.jpg"
+              alt="Portfolio preview"
+            >
 
-      <div class="display">
-
-        <div class="display-image">
-          <img
-            id="mainPreview"
-            src="images/profile.jpg"
-            alt="Portfolio preview"
-          >
-
-          <div class="display-label" id="previewTitle">
-            WELCOME TO MY WORLD ♡
+            <div class="display-label" id="previewTitle">
+              WELCOME TO MY WORLD ♡
+            </div>
           </div>
         </div>
 
+        <h2 class="panel-title">MY LITTLE WORLD ♡</h2>
+
+        <div class="device-projects">
+
+          <a href="fonts.html" class="device-project"
+             data-image="images/fonts.jpg"
+             data-title="MY FONTS">
+            <img src="images/fonts.jpg" alt="Fonts project">
+            <span>FONTS</span>
+          </a>
+
+          <a href="design.html" class="device-project"
+             data-image="images/design.jpg"
+             data-title="MY DESIGNS">
+            <img src="images/design.jpg" alt="Design project">
+            <span>DESIGN</span>
+          </a>
+
+          <a href="photo.html" class="device-project"
+             data-image="images/photo.jpg"
+             data-title="PHOTOGRAPHY">
+            <img src="images/photo.jpg" alt="Photography project">
+            <span>PHOTO</span>
+          </a>
+
+          <a href="drawing.html" class="device-project"
+             data-image="images/drawing.jpg"
+             data-title="DRAWINGS">
+            <img src="images/drawing.jpg" alt="Drawing project">
+            <span>DRAWING</span>
+          </a>
+
+          <a href="art.html" class="device-project"
+             data-image="images/art.jpg"
+             data-title="MY ART">
+            <img src="images/art.jpg" alt="Art project">
+            <span>ART</span>
+          </a>
+
+          <a href="creative.html" class="device-project"
+             data-image="images/creative.jpg"
+             data-title="CREATIVE WORK">
+            <img src="images/creative.jpg" alt="Creative work">
+            <span>CREATIVE</span>
+          </a>
+
+        </div>
       </div>
 
-      <h2 class="panel-title">MY LITTLE WORLD ♡</h2>
+      <div class="controls" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </section>
 
-      <div class="device-projects">
+  <!-- MY WORK IN DETAILS -->
 
-        <a href="fonts.html" class="device-project"
-           data-image="images/fonts.jpg"
-           data-title="MY FONTS">
-          <img src="images/fonts.jpg" alt="Fonts project">
-          <span>FONTS</span>
+  <section class="gallery-section work-section">
+
+    <h2 class="gallery-heading">
+      my work in details <span>♡</span>
+    </h2>
+
+    <div class="slider-wrapper">
+
+      <button class="slide-btn prev"
+              data-target="workSlider"
+              aria-label="Scroll projects left">‹</button>
+
+      <div class="slider" id="workSlider">
+
+        <a href="project1.html" class="photo-card">
+          <img src="images/work1.jpg" alt="Project 1">
+          <span class="photo-name">Project 01</span>
         </a>
 
-        <a href="design.html" class="device-project"
-           data-image="images/design.jpg"
-           data-title="MY DESIGNS">
-          <img src="images/design.jpg" alt="Design project">
-          <span>DESIGN</span>
+        <a href="project2.html" class="photo-card">
+          <img src="images/work2.jpg" alt="Project 2">
+          <span class="photo-name">Project 02</span>
         </a>
 
-        <a href="photo.html" class="device-project"
-           data-image="images/photo.jpg"
-           data-title="PHOTOGRAPHY">
-          <img src="images/photo.jpg" alt="Photography project">
-          <span>PHOTO</span>
+        <a href="project3.html" class="photo-card">
+          <img src="images/work3.jpg" alt="Project 3">
+          <span class="photo-name">Project 03</span>
         </a>
 
-        <a href="drawing.html" class="device-project"
-           data-image="images/drawing.jpg"
-           data-title="DRAWINGS">
-          <img src="images/drawing.jpg" alt="Drawing project">
-          <span>DRAWING</span>
+        <a href="project4.html" class="photo-card">
+          <img src="images/work4.jpg" alt="Project 4">
+          <span class="photo-name">Project 04</span>
         </a>
 
-        <a href="art.html" class="device-project"
-           data-image="images/art.jpg"
-           data-title="MY ART">
-          <img src="images/art.jpg" alt="Art project">
-          <span>ART</span>
+        <a href="project5.html" class="photo-card">
+          <img src="images/work5.jpg" alt="Project 5">
+          <span class="photo-name">Project 05</span>
         </a>
 
-        <a href="creative.html" class="device-project"
-           data-image="images/creative.jpg"
-           data-title="CREATIVE WORK">
-          <img src="images/creative.jpg" alt="Creative work">
-          <span>CREATIVE</span>
+        <a href="project6.html" class="photo-card">
+          <img src="images/work6.jpg" alt="Project 6">
+          <span class="photo-name">Project 06</span>
         </a>
 
       </div>
+
+      <button class="slide-btn next"
+              data-target="workSlider"
+              aria-label="Scroll projects right">›</button>
     </div>
 
-    <div class="controls" aria-hidden="true">
-      <span></span>
-      <span></span>
-      <span></span>
+    <p class="section-note">
+      big project teaches me graphic design and social media ♡
+    </p>
+  </section>
+
+  <!-- PHOTOGRAPHY -->
+
+  <section class="gallery-section photo-section">
+
+    <h2 class="gallery-heading">
+      photography <span>✿</span>
+    </h2>
+
+    <div class="slider-wrapper">
+
+      <button class="slide-btn prev"
+              data-target="photoSlider"
+              aria-label="Scroll photography left">‹</button>
+
+      <div class="slider" id="photoSlider">
+
+        <a href="photo1.html" class="photo-card">
+          <img src="images/photo1.jpg" alt="Photography 1">
+        </a>
+
+        <a href="photo2.html" class="photo-card">
+          <img src="images/photo2.jpg" alt="Photography 2">
+        </a>
+
+        <a href="photo3.html" class="photo-card">
+          <img src="images/photo3.jpg" alt="Photography 3">
+        </a>
+
+        <a href="photo4.html" class="photo-card">
+          <img src="images/photo4.jpg" alt="Photography 4">
+        </a>
+
+        <a href="photo5.html" class="photo-card">
+          <img src="images/photo5.jpg" alt="Photography 5">
+        </a>
+
+        <a href="photo6.html" class="photo-card">
+          <img src="images/photo6.jpg" alt="Photography 6">
+        </a>
+
+      </div>
+
+      <button class="slide-btn next"
+              data-target="photoSlider"
+              aria-label="Scroll photography right">›</button>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- DRAWINGS -->
 
-<!-- MY WORK IN DETAILS -->
+  <section class="gallery-section drawing-section">
 
-<section class="gallery-section work-section">
+    <h2 class="gallery-heading">
+      drawings <span>♡</span>
+    </h2>
 
-  <h2 class="gallery-heading">
-    my work in details <span>♡</span>
-  </h2>
+    <div class="slider-wrapper">
 
-  <div class="slider-wrapper">
+      <button class="slide-btn prev"
+              data-target="drawingSlider"
+              aria-label="Scroll drawings left">‹</button>
 
-    <button class="slide-btn prev"
-            data-target="workSlider"
-            aria-label="Scroll projects left">‹</button>
+      <div class="slider" id="drawingSlider">
 
-    <div class="slider" id="workSlider">
+        <a href="drawing1.html" class="photo-card">
+          <img src="images/drawing1.jpg" alt="Drawing 1">
+        </a>
 
-      <a href="project1.html" class="photo-card">
-        <img src="images/work1.jpg" alt="Project 1">
-        <span class="photo-name">Project 01</span>
-      </a>
+        <a href="drawing2.html" class="photo-card">
+          <img src="images/drawing2.jpg" alt="Drawing 2">
+        </a>
 
-      <a href="project2.html" class="photo-card">
-        <img src="images/work2.jpg" alt="Project 2">
-        <span class="photo-name">Project 02</span>
-      </a>
+        <a href="drawing3.html" class="photo-card">
+          <img src="images/drawing3.jpg" alt="Drawing 3">
+        </a>
 
-      <a href="project3.html" class="photo-card">
-        <img src="images/work3.jpg" alt="Project 3">
-        <span class="photo-name">Project 03</span>
-      </a>
+        <a href="drawing4.html" class="photo-card">
+          <img src="images/drawing4.jpg" alt="Drawing 4">
+        </a>
 
-      <a href="project4.html" class="photo-card">
-        <img src="images/work4.jpg" alt="Project 4">
-        <span class="photo-name">Project 04</span>
-      </a>
+        <a href="drawing5.html" class="photo-card">
+          <img src="images/drawing5.jpg" alt="Drawing 5">
+        </a>
 
-      <a href="project5.html" class="photo-card">
-        <img src="images/work5.jpg" alt="Project 5">
-        <span class="photo-name">Project 05</span>
-      </a>
+        <a href="drawing6.html" class="photo-card">
+          <img src="images/drawing6.jpg" alt="Drawing 6">
+        </a>
 
-      <a href="project6.html" class="photo-card">
-        <img src="images/work6.jpg" alt="Project 6">
-        <span class="photo-name">Project 06</span>
-      </a>
+      </div>
 
+      <button class="slide-btn next"
+              data-target="drawingSlider"
+              aria-label="Scroll drawings right">›</button>
     </div>
+  </section>
 
-    <button class="slide-btn next"
-            data-target="workSlider"
-            aria-label="Scroll projects right">›</button>
+  <footer class="footer">
+    ♡ THANK YOU FOR VISITING CECILIA'S WORLD ♡
+  </footer>
 
-  </div>
-
-  <p class="section-note">
-    big project teaches me graphic design and social media ♡
-  </p>
-
-</section>
-
-<!-- PHOTOGRAPHY -->
-
-<section class="gallery-section photo-section">
-
-  <h2 class="gallery-heading">
-    photography <span>✿</span>
-  </h2>
-
-  <div class="slider-wrapper">
-
-    <button class="slide-btn prev"
-            data-target="photoSlider"
-            aria-label="Scroll photography left">‹</button>
-
-    <div class="slider" id="photoSlider">
-
-      <a href="photo1.html" class="photo-card">
-        <img src="images/photo1.jpg" alt="Photography 1">
-      </a>
-
-      <a href="photo2.html" class="photo-card">
-        <img src="images/photo2.jpg" alt="Photography 2">
-      </a>
-
-      <a href="photo3.html" class="photo-card">
-        <img src="images/photo3.jpg" alt="Photography 3">
-      </a>
-
-      <a href="photo4.html" class="photo-card">
-        <img src="images/photo4.jpg" alt="Photography 4">
-      </a>
-
-      <a href="photo5.html" class="photo-card">
-        <img src="images/photo5.jpg" alt="Photography 5">
-      </a>
-
-      <a href="photo6.html" class="photo-card">
-        <img src="images/photo6.jpg" alt="Photography 6">
-      </a>
-
-    </div>
-
-    <button class="slide-btn next"
-            data-target="photoSlider"
-            aria-label="Scroll photography right">›</button>
-
-  </div>
-</section>
-
-<!-- DRAWINGS -->
-
-<section class="gallery-section drawing-section">
-
-  <h2 class="gallery-heading">
-    drawings <span>♡</span>
-  </h2>
-
-  <div class="slider-wrapper">
-
-    <button class="slide-btn prev"
-            data-target="drawingSlider"
-            aria-label="Scroll drawings left">‹</button>
-
-    <div class="slider" id="drawingSlider">
-
-      <a href="drawing1.html" class="photo-card">
-        <img src="images/drawing1.jpg" alt="Drawing 1">
-      </a>
-
-      <a href="drawing2.html" class="photo-card">
-        <img src="images/drawing2.jpg" alt="Drawing 2">
-      </a>
-
-      <a href="drawing3.html" class="photo-card">
-        <img src="images/drawing3.jpg" alt="Drawing 3">
-      </a>
-
-      <a href="drawing4.html" class="photo-card">
-        <img src="images/drawing4.jpg" alt="Drawing 4">
-      </a>
-
-      <a href="drawing5.html" class="photo-card">
-        <img src="images/drawing5.jpg" alt="Drawing 5">
-      </a>
-
-      <a href="drawing6.html" class="photo-card">
-        <img src="images/drawing6.jpg" alt="Drawing 6">
-      </a>
-
-    </div>
-
-    <button class="slide-btn next"
-            data-target="drawingSlider"
-            aria-label="Scroll drawings right">›</button>
-
-  </div>
-</section>
-
-<footer class="footer">
-  ♡ THANK YOU FOR VISITING CECILIA'S WORLD ♡
-</footer>
+</main>
 
 <script>
 // DEVICE IMAGE PREVIEW
@@ -815,4 +818,3 @@ document.querySelectorAll("img").forEach(img => {
 
 </body>
 </html>
-
