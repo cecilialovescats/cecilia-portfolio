@@ -8,485 +8,478 @@
 
 <style>
 :root {
-    --pink: #f3a6c6;
-    --lavender: #a9bdf2;
-    --placeholder: #cbd4db;
-    --text-pink: #a4779b;
+  --pink: #f3a6c6;
+  --lavender: #a9bdf2;
+  --placeholder: #cbd4db;
+  --text-pink: #a4779b;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    min-height: 100vh;
-    overflow-x: hidden;
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    background-color: #fcecf4;
-    background-image: url("bgph.png");
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: #fcecf4 url("bgph.png") center top / 100% auto no-repeat;
 }
 
-/* FIRST PAGE */
+/* FIRST SCREEN */
 
 .hero {
-    position: relative;
-    width: 100%;
-    height: clamp(850px, 116vw, 960px);
+  position: relative;
+  width: 100%;
+  height: 604px;
 }
 
 .intro {
-    position: absolute;
-    top: clamp(95px, 15vw, 145px);
-    left: 5.5%;
-    z-index: 1;
+  position: absolute;
+  top: 90px;
+  left: 5.5%;
+  z-index: 1;
 }
 
 .intro h1 {
-    font-size: clamp(52px, 8.5vw, 82px);
-    line-height: 1;
-    font-weight: 400;
-    letter-spacing: -3px;
-    color: #050505;
+  font-size: clamp(52px, 6vw, 82px);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -3px;
+  color: #050505;
 }
 
 .intro p,
 .intro .stars {
-    display: none;
+  display: none;
 }
 
 /* RETRO DEVICE */
 
 .device {
-    position: absolute;
-    top: clamp(470px, 62vw, 515px);
-    right: 23%;
-    width: 225px;
-    padding: 8px;
-    border: 2px solid #fff4fa;
-    border-radius: 22px;
-    background: linear-gradient(145deg, #ffc3d9, #ec82ad);
-    box-shadow: 0 6px 0 #d36d9b,
-                0 12px 22px #85546b40;
-    z-index: 2;
+  position: absolute;
+  top: 311px;
+  right: 19.6%;
+  width: 338px;
+  padding: 12px;
+  border: 3px solid #fff4fa;
+  border-radius: 34px;
+  background: linear-gradient(145deg, #ffc3d9, #ec82ad);
+  box-shadow: 0 7px 0 #d36d9b,
+              0 14px 26px #85546b40;
+  z-index: 2;
 }
 
 .screen {
-    padding: 8px;
-    border: 4px solid #f8b3cf;
-    border-radius: 16px;
-    background: #a9bdf2;
+  padding: 10px;
+  border: 5px solid #f8b3cf;
+  border-radius: 25px;
+  background: #a9bdf2;
 }
 
 .display {
-    padding: 7px;
-    border: 5px solid #e7e9ec;
-    border-radius: 16px;
-    background: #fff;
-    box-shadow: inset 0 0 8px #bbb;
+  padding: 9px;
+  border: 6px solid #e7e9ec;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: inset 0 0 8px #bbb;
 }
 
 .display-image {
-    position: relative;
-    height: 105px;
-    overflow: hidden;
-    border-radius: 10px;
-    background: #f9e9f3;
+  position: relative;
+  height: 122px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #f9e9f3;
 }
 
 .display-image img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity .2s ease;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity .2s ease;
 }
 
 .display-label {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 7px 3px;
-    color: #a36e9b;
-    background: #ffffffdf;
-    text-align: center;
-    font-size: 8px;
-    font-weight: bold;
-    letter-spacing: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 3px;
+  color: #a36e9b;
+  background: #ffffffdf;
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
 }
 
 .panel-title {
-    margin: 11px 0 9px;
-    color: white;
-    text-align: center;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-shadow: 1px 1px #897ab9;
+  margin: 17px 0 12px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1.7px;
+  text-shadow: 1px 1px #897ab9;
 }
 
 .device-projects {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
 }
 
 .device-project {
-    min-width: 0;
-    padding: 4px;
-    border: 2px solid #ffffffc9;
-    border-radius: 10px;
-    background: linear-gradient(145deg, #fff, #fff0f7);
-    text-align: center;
-    text-decoration: none;
-    transition: transform .2s, box-shadow .2s;
+  min-width: 0;
+  min-height: 101px;
+  padding: 6px;
+  border: 2px solid #ffffffc9;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #fff, #fff0f7);
+  text-align: center;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
 }
 
 .device-project:hover,
 .device-project:focus-visible {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 4px 9px #735b8c55;
-    outline: none;
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 4px 9px #735b8c55;
+  outline: none;
 }
 
 .device-project img {
-    display: block;
-    width: 100%;
-    height: 42px;
-    border-radius: 6px;
-    object-fit: cover;
-    background: var(--placeholder);
+  display: block;
+  width: 100%;
+  height: 64px;
+  border-radius: 9px;
+  object-fit: cover;
+  background: var(--placeholder);
 }
 
 .device-project span {
-    display: block;
-    padding: 4px 0 1px;
-    color: var(--text-pink);
-    font-size: 7px;
-    font-weight: bold;
-    overflow-wrap: anywhere;
+  display: block;
+  padding: 5px 0 1px;
+  color: var(--text-pink);
+  font-size: 9px;
+  font-weight: bold;
+  overflow-wrap: anywhere;
 }
 
 .controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    padding: 10px 0 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0 2px;
 }
 
 .controls span {
-    display: block;
-    width: 19px;
-    height: 19px;
-    border: 2px solid #a3e68f;
-    border-radius: 50%;
-    background: linear-gradient(145deg, #a4f47f, #58d64e);
-    box-shadow: 0 2px 4px #7775;
+  display: block;
+  width: 19px;
+  height: 19px;
+  border: 2px solid #a3e68f;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #a4f47f, #58d64e);
+  box-shadow: 0 2px 4px #7775;
 }
 
 .controls span:first-child {
-    width: 29px;
-    height: 12px;
-    border-radius: 20px;
+  width: 29px;
+  height: 12px;
+  border-radius: 20px;
 }
 
 /* GALLERY SECTIONS */
 
 .gallery-section {
-    position: relative;
-    width: 100%;
-    padding: 0;
+  position: relative;
+  width: 100%;
+  padding: 0;
 }
 
 .gallery-heading {
-    margin: 0 0 14px;
-    color: #171717;
-    font-size: 12px;
-    font-weight: normal;
-    letter-spacing: .3px;
+  margin: 0 0 15px;
+  color: #171717;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: .3px;
 }
 
 .gallery-heading span {
-    color: #d887b3;
+  color: #d887b3;
 }
 
 /* WORK GALLERY */
 
 .work-section {
-    min-height: 340px;
-    padding-top: 5px;
+  min-height: 435px;
+  padding-top: 0;
 }
 
 .work-section .gallery-heading {
-    padding-left: 28%;
+  padding-left: 28%;
 }
 
 /* PHOTOGRAPHY */
 
 .photo-section {
-    min-height: 205px;
-    padding-top: 0;
+  min-height: 292px;
+  padding-top: 0;
 }
 
 .photo-section .gallery-heading,
 .drawing-section .gallery-heading {
-    padding-left: 36%;
+  padding-left: 36.5%;
 }
 
 /* DRAWINGS */
 
 .drawing-section {
-    min-height: 250px;
-    padding-top: 0;
+  min-height: 290px;
+  padding-top: 0;
 }
 
 /* SLIDERS */
 
 .slider-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .slider {
-    display: flex;
-    gap: 22px;
-    width: 100%;
-    overflow-x: auto;
-    padding: 5px 0 14px;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    overscroll-behavior-x: contain;
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  overflow-x: auto;
+  padding: 0 0 14px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
 }
 
 .slider::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* IMAGE CARDS */
 
 .photo-card {
-    position: relative;
-    display: block;
-    flex: 0 0 140px;
-    height: 140px;
-    overflow: hidden;
-    border-radius: 19px;
-    background: var(--placeholder);
-    text-decoration: none;
-    scroll-snap-align: start;
-    transition: transform .22s, box-shadow .22s;
+  position: relative;
+  display: block;
+  flex: 0 0 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 25px;
+  background: var(--placeholder);
+  text-decoration: none;
+  scroll-snap-align: start;
+  transition: transform .22s, box-shadow .22s;
 }
 
 .photo-card:hover,
 .photo-card:focus-visible {
-    transform: translateY(-5px);
-    box-shadow: 0 7px 14px #755b8050;
-    outline: none;
+  transform: translateY(-5px);
+  box-shadow: 0 7px 14px #755b8050;
+  outline: none;
 }
 
 .photo-card img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background: var(--placeholder);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--placeholder);
 }
 
 .photo-name {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 15px 5px 8px;
-    color: white;
-    background: linear-gradient(transparent, #0009);
-    text-align: center;
-    font-size: 10px;
-    opacity: 0;
-    transition: opacity .2s;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px 5px 8px;
+  color: white;
+  background: linear-gradient(transparent, #0009);
+  text-align: center;
+  font-size: 10px;
+  opacity: 0;
+  transition: opacity .2s;
 }
 
 .photo-card:hover .photo-name,
 .photo-card:focus-visible .photo-name {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* SMALLER LOWER GALLERIES */
 
 .photo-section .photo-card,
 .drawing-section .photo-card {
-    flex-basis: 110px;
-    height: 110px;
+  flex-basis: 156px;
+  height: 156px;
 }
 
 .section-note {
-    margin-top: 20px;
-    margin-left: 29%;
-    max-width: 180px;
-    color: #222;
-    font-size: 11px;
-    line-height: 1.5;
-    text-align: center;
+  margin-top: 20px;
+  margin-left: 29%;
+  max-width: 250px;
+  color: #222;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
 }
 
 /* SLIDE ARROWS */
 
 .slide-btn {
-    position: absolute;
-    top: 50%;
-    z-index: 3;
-    display: grid;
-    width: 31px;
-    height: 31px;
-    place-items: center;
-    border: 2px solid white;
-    border-radius: 50%;
-    background: #f3a6c6ef;
-    color: white;
-    font-size: 21px;
-    line-height: 1;
-    cursor: pointer;
-    opacity: 0;
-    transform: translateY(-50%);
-    transition: opacity .2s, background .2s;
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: #f3a6c6ef;
+  color: white;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: opacity .2s, background .2s;
 }
 
 .slider-wrapper:hover .slide-btn,
 .slider-wrapper:focus-within .slide-btn {
-    opacity: 1;
+  opacity: 1;
 }
 
 .slide-btn:hover {
-    background: #d989b2;
+  background: #d989b2;
 }
 
 .slide-btn.prev {
-    left: 8px;
+  left: 8px;
 }
 
 .slide-btn.next {
-    right: 8px;
+  right: 8px;
 }
 
 /* FOOTER */
 
 .footer {
-    padding: 25px 12px 35px;
-    color: #a46e94;
-    text-align: center;
-    font-size: 11px;
-    letter-spacing: 2px;
+  padding: 25px 12px 35px;
+  color: #a46e94;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
 }
 
 /* MOBILE RESPONSIVE */
 
-@media (max-width: 750px) {
+@media (max-width: 900px) {
+  body {
+    background-size: auto 100%;
+    background-position: center top;
+    background-repeat: repeat-y;
+  }
 
-    body {
-        background-size: auto 100%;
-        background-position: center top;
-        background-repeat: repeat-y;
-    }
+  .hero {
+    height: 760px;
+  }
 
-    .hero {
-        height: 850px;
-    }
+  .intro {
+    top: 70px;
+    left: 6%;
+  }
 
-    .intro {
-        top: 85px;
-        left: 5%;
-    }
+  .device {
+    top: 300px;
+    right: 6%;
+    width: min(338px, 88vw);
+  }
 
-    .intro h1 {
-        font-size: clamp(48px, 12vw, 65px);
-    }
+  .work-section {
+    min-height: 390px;
+  }
 
-    .device {
-        top: 430px;
-        right: 6%;
-        width: 220px;
-    }
+  .work-section .gallery-heading,
+  .photo-section .gallery-heading,
+  .drawing-section .gallery-heading {
+    padding-left: 7%;
+  }
 
-    .work-section {
-        min-height: 330px;
-    }
+  .section-note {
+    margin-left: 7%;
+    text-align: left;
+  }
 
-    .work-section .gallery-heading {
-        padding-left: 8%;
-    }
+  .photo-card {
+    flex-basis: 170px;
+    height: 170px;
+  }
 
-    .photo-section .gallery-heading,
-    .drawing-section .gallery-heading {
-        padding-left: 8%;
-    }
+  .photo-section .photo-card,
+  .drawing-section .photo-card {
+    flex-basis: 140px;
+    height: 140px;
+  }
 
-    .section-note {
-        margin-left: 8%;
-        text-align: left;
-    }
-
-    .photo-card {
-        flex-basis: 125px;
-        height: 125px;
-    }
-
-    .photo-section .photo-card,
-    .drawing-section .photo-card {
-        flex-basis: 105px;
-        height: 105px;
-    }
-
-    .slide-btn {
-        opacity: 1;
-    }
+  .slide-btn {
+    opacity: 1;
+  }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
+  .hero {
+    height: 720px;
+  }
 
-    .device {
-        right: 5%;
-        width: 210px;
-    }
+  .device {
+    top: 285px;
+    right: 5%;
+    width: min(310px, 90vw);
+  }
 
-    .slider {
-        gap: 14px;
-    }
+  .slider {
+    gap: 16px;
+  }
 
-    .photo-card {
-        flex-basis: 112px;
-        height: 112px;
-    }
+  .photo-card {
+    flex-basis: 145px;
+    height: 145px;
+  }
 
-    .photo-section .photo-card,
-    .drawing-section .photo-card {
-        flex-basis: 95px;
-        height: 95px;
-    }
+  .photo-section .photo-card,
+  .drawing-section .photo-card {
+    flex-basis: 118px;
+    height: 118px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
+  html {
+    scroll-behavior: auto;
+  }
 
-    .slider,
-    .photo-card,
-    .device-project,
-    .display-image img {
-        transition: none;
-    }
+  .slider,
+  .photo-card,
+  .device-project,
+  .display-image img {
+    transition: none;
+  }
 }
 </style>
 </head>
@@ -497,273 +490,253 @@ body {
 
 <section class="hero">
 
-    <div class="intro">
-        <h1>welcome</h1>
-    </div>
+  <div class="intro">
+    <h1>welcome</h1>
+  </div>
 
-    <!-- RETRO PROJECT SELECTOR -->
+  <!-- RETRO PROJECT SELECTOR -->
 
-    <div class="device">
+  <div class="device">
 
-        <div class="screen">
+    <div class="screen">
 
-            <div class="display">
+      <div class="display">
+        <div class="display-image">
 
-                <div class="display-image">
+          <img
+            id="mainPreview"
+            src="images/profile.jpg"
+            alt="Portfolio preview"
+          >
 
-                    <img
-                        id="mainPreview"
-                        src="images/profile.jpg"
-                        alt="Portfolio preview"
-                    >
-
-                    <div class="display-label" id="previewTitle">
-                        WELCOME TO MY WORLD ♡
-                    </div>
-
-                </div>
-
-            </div>
-
-            <h2 class="panel-title">
-                MY LITTLE WORLD ♡
-            </h2>
-
-            <div class="device-projects">
-
-                <a href="fonts.html" class="device-project"
-                   data-image="images/fonts.jpg"
-                   data-title="MY FONTS">
-
-                    <img src="images/fonts.jpg" alt="Fonts project">
-                    <span>FONTS</span>
-                </a>
-
-                <a href="design.html" class="device-project"
-                   data-image="images/design.jpg"
-                   data-title="MY DESIGNS">
-
-                    <img src="images/design.jpg" alt="Design project">
-                    <span>DESIGN</span>
-                </a>
-
-                <a href="photo.html" class="device-project"
-                   data-image="images/photo.jpg"
-                   data-title="PHOTOGRAPHY">
-
-                    <img src="images/photo.jpg" alt="Photography project">
-                    <span>PHOTO</span>
-                </a>
-
-                <a href="drawing.html" class="device-project"
-                   data-image="images/drawing.jpg"
-                   data-title="DRAWINGS">
-
-                    <img src="images/drawing.jpg" alt="Drawing project">
-                    <span>DRAWING</span>
-                </a>
-
-                <a href="art.html" class="device-project"
-                   data-image="images/art.jpg"
-                   data-title="MY ART">
-
-                    <img src="images/art.jpg" alt="Art project">
-                    <span>ART</span>
-                </a>
-
-                <a href="creative.html" class="device-project"
-                   data-image="images/creative.jpg"
-                   data-title="CREATIVE WORK">
-
-                    <img src="images/creative.jpg" alt="Creative work">
-                    <span>CREATIVE</span>
-                </a>
-
-            </div>
+          <div class="display-label" id="previewTitle">
+            WELCOME TO MY WORLD ♡
+          </div>
 
         </div>
+      </div>
 
-        <div class="controls" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+      <h2 class="panel-title">MY LITTLE WORLD ♡</h2>
 
+      <div class="device-projects">
+
+        <a href="fonts.html" class="device-project"
+           data-image="images/fonts.jpg"
+           data-title="MY FONTS">
+          <img src="images/fonts.jpg" alt="Fonts project">
+          <span>FONTS</span>
+        </a>
+
+        <a href="design.html" class="device-project"
+           data-image="images/design.jpg"
+           data-title="MY DESIGNS">
+          <img src="images/design.jpg" alt="Design project">
+          <span>DESIGN</span>
+        </a>
+
+        <a href="photo.html" class="device-project"
+           data-image="images/photo.jpg"
+           data-title="PHOTOGRAPHY">
+          <img src="images/photo.jpg" alt="Photography project">
+          <span>PHOTO</span>
+        </a>
+
+        <a href="drawing.html" class="device-project"
+           data-image="images/drawing.jpg"
+           data-title="DRAWINGS">
+          <img src="images/drawing.jpg" alt="Drawing project">
+          <span>DRAWING</span>
+        </a>
+
+        <a href="art.html" class="device-project"
+           data-image="images/art.jpg"
+           data-title="MY ART">
+          <img src="images/art.jpg" alt="Art project">
+          <span>ART</span>
+        </a>
+
+        <a href="creative.html" class="device-project"
+           data-image="images/creative.jpg"
+           data-title="CREATIVE WORK">
+          <img src="images/creative.jpg" alt="Creative work">
+          <span>CREATIVE</span>
+        </a>
+
+      </div>
     </div>
 
+    <div class="controls" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
 </section>
-
 
 <!-- MY WORK IN DETAILS -->
 
 <section class="gallery-section work-section">
 
-    <h2 class="gallery-heading">
-        my work in details <span>♡</span>
-    </h2>
+  <h2 class="gallery-heading">
+    my work in details <span>♡</span>
+  </h2>
 
-    <div class="slider-wrapper">
+  <div class="slider-wrapper">
 
-        <button class="slide-btn prev"
-                data-target="workSlider"
-                aria-label="Scroll projects left">‹</button>
+    <button class="slide-btn prev"
+            data-target="workSlider"
+            aria-label="Scroll projects left">‹</button>
 
-        <div class="slider" id="workSlider">
+    <div class="slider" id="workSlider">
 
-            <a href="project1.html" class="photo-card">
-                <img src="images/work1.jpg" alt="Project 1">
-                <span class="photo-name">Project 01</span>
-            </a>
+      <a href="project1.html" class="photo-card">
+        <img src="images/work1.jpg" alt="Project 1">
+        <span class="photo-name">Project 01</span>
+      </a>
 
-            <a href="project2.html" class="photo-card">
-                <img src="images/work2.jpg" alt="Project 2">
-                <span class="photo-name">Project 02</span>
-            </a>
+      <a href="project2.html" class="photo-card">
+        <img src="images/work2.jpg" alt="Project 2">
+        <span class="photo-name">Project 02</span>
+      </a>
 
-            <a href="project3.html" class="photo-card">
-                <img src="images/work3.jpg" alt="Project 3">
-                <span class="photo-name">Project 03</span>
-            </a>
+      <a href="project3.html" class="photo-card">
+        <img src="images/work3.jpg" alt="Project 3">
+        <span class="photo-name">Project 03</span>
+      </a>
 
-            <a href="project4.html" class="photo-card">
-                <img src="images/work4.jpg" alt="Project 4">
-                <span class="photo-name">Project 04</span>
-            </a>
+      <a href="project4.html" class="photo-card">
+        <img src="images/work4.jpg" alt="Project 4">
+        <span class="photo-name">Project 04</span>
+      </a>
 
-            <a href="project5.html" class="photo-card">
-                <img src="images/work5.jpg" alt="Project 5">
-                <span class="photo-name">Project 05</span>
-            </a>
+      <a href="project5.html" class="photo-card">
+        <img src="images/work5.jpg" alt="Project 5">
+        <span class="photo-name">Project 05</span>
+      </a>
 
-            <a href="project6.html" class="photo-card">
-                <img src="images/work6.jpg" alt="Project 6">
-                <span class="photo-name">Project 06</span>
-            </a>
-
-        </div>
-
-        <button class="slide-btn next"
-                data-target="workSlider"
-                aria-label="Scroll projects right">›</button>
+      <a href="project6.html" class="photo-card">
+        <img src="images/work6.jpg" alt="Project 6">
+        <span class="photo-name">Project 06</span>
+      </a>
 
     </div>
 
-    <p class="section-note">
-        big project teaches me graphic design and social media ♡
-    </p>
+    <button class="slide-btn next"
+            data-target="workSlider"
+            aria-label="Scroll projects right">›</button>
+
+  </div>
+
+  <p class="section-note">
+    big project teaches me graphic design and social media ♡
+  </p>
 
 </section>
-
 
 <!-- PHOTOGRAPHY -->
 
 <section class="gallery-section photo-section">
 
-    <h2 class="gallery-heading">
-        photography <span>✿</span>
-    </h2>
+  <h2 class="gallery-heading">
+    photography <span>✿</span>
+  </h2>
 
-    <div class="slider-wrapper">
+  <div class="slider-wrapper">
 
-        <button class="slide-btn prev"
-                data-target="photoSlider"
-                aria-label="Scroll photography left">‹</button>
+    <button class="slide-btn prev"
+            data-target="photoSlider"
+            aria-label="Scroll photography left">‹</button>
 
-        <div class="slider" id="photoSlider">
+    <div class="slider" id="photoSlider">
 
-            <a href="photo1.html" class="photo-card">
-                <img src="images/photo1.jpg" alt="Photography 1">
-            </a>
+      <a href="photo1.html" class="photo-card">
+        <img src="images/photo1.jpg" alt="Photography 1">
+      </a>
 
-            <a href="photo2.html" class="photo-card">
-                <img src="images/photo2.jpg" alt="Photography 2">
-            </a>
+      <a href="photo2.html" class="photo-card">
+        <img src="images/photo2.jpg" alt="Photography 2">
+      </a>
 
-            <a href="photo3.html" class="photo-card">
-                <img src="images/photo3.jpg" alt="Photography 3">
-            </a>
+      <a href="photo3.html" class="photo-card">
+        <img src="images/photo3.jpg" alt="Photography 3">
+      </a>
 
-            <a href="photo4.html" class="photo-card">
-                <img src="images/photo4.jpg" alt="Photography 4">
-            </a>
+      <a href="photo4.html" class="photo-card">
+        <img src="images/photo4.jpg" alt="Photography 4">
+      </a>
 
-            <a href="photo5.html" class="photo-card">
-                <img src="images/photo5.jpg" alt="Photography 5">
-            </a>
+      <a href="photo5.html" class="photo-card">
+        <img src="images/photo5.jpg" alt="Photography 5">
+      </a>
 
-            <a href="photo6.html" class="photo-card">
-                <img src="images/photo6.jpg" alt="Photography 6">
-            </a>
-
-        </div>
-
-        <button class="slide-btn next"
-                data-target="photoSlider"
-                aria-label="Scroll photography right">›</button>
+      <a href="photo6.html" class="photo-card">
+        <img src="images/photo6.jpg" alt="Photography 6">
+      </a>
 
     </div>
 
-</section>
+    <button class="slide-btn next"
+            data-target="photoSlider"
+            aria-label="Scroll photography right">›</button>
 
+  </div>
+</section>
 
 <!-- DRAWINGS -->
 
 <section class="gallery-section drawing-section">
 
-    <h2 class="gallery-heading">
-        drawings <span>♡</span>
-    </h2>
+  <h2 class="gallery-heading">
+    drawings <span>♡</span>
+  </h2>
 
-    <div class="slider-wrapper">
+  <div class="slider-wrapper">
 
-        <button class="slide-btn prev"
-                data-target="drawingSlider"
-                aria-label="Scroll drawings left">‹</button>
+    <button class="slide-btn prev"
+            data-target="drawingSlider"
+            aria-label="Scroll drawings left">‹</button>
 
-        <div class="slider" id="drawingSlider">
+    <div class="slider" id="drawingSlider">
 
-            <a href="drawing1.html" class="photo-card">
-                <img src="images/drawing1.jpg" alt="Drawing 1">
-            </a>
+      <a href="drawing1.html" class="photo-card">
+        <img src="images/drawing1.jpg" alt="Drawing 1">
+      </a>
 
-            <a href="drawing2.html" class="photo-card">
-                <img src="images/drawing2.jpg" alt="Drawing 2">
-            </a>
+      <a href="drawing2.html" class="photo-card">
+        <img src="images/drawing2.jpg" alt="Drawing 2">
+      </a>
 
-            <a href="drawing3.html" class="photo-card">
-                <img src="images/drawing3.jpg" alt="Drawing 3">
-            </a>
+      <a href="drawing3.html" class="photo-card">
+        <img src="images/drawing3.jpg" alt="Drawing 3">
+      </a>
 
-            <a href="drawing4.html" class="photo-card">
-                <img src="images/drawing4.jpg" alt="Drawing 4">
-            </a>
+      <a href="drawing4.html" class="photo-card">
+        <img src="images/drawing4.jpg" alt="Drawing 4">
+      </a>
 
-            <a href="drawing5.html" class="photo-card">
-                <img src="images/drawing5.jpg" alt="Drawing 5">
-            </a>
+      <a href="drawing5.html" class="photo-card">
+        <img src="images/drawing5.jpg" alt="Drawing 5">
+      </a>
 
-            <a href="drawing6.html" class="photo-card">
-                <img src="images/drawing6.jpg" alt="Drawing 6">
-            </a>
-
-        </div>
-
-        <button class="slide-btn next"
-                data-target="drawingSlider"
-                aria-label="Scroll drawings right">›</button>
+      <a href="drawing6.html" class="photo-card">
+        <img src="images/drawing6.jpg" alt="Drawing 6">
+      </a>
 
     </div>
 
+    <button class="slide-btn next"
+            data-target="drawingSlider"
+            aria-label="Scroll drawings right">›</button>
+
+  </div>
 </section>
 
-
 <footer class="footer">
-    ♡ THANK YOU FOR VISITING CECILIA'S WORLD ♡
+  ♡ THANK YOU FOR VISITING CECILIA'S WORLD ♡
 </footer>
 
-
 <script>
-
 // DEVICE IMAGE PREVIEW
 
 const mainPreview = document.getElementById("mainPreview");
@@ -775,86 +748,66 @@ const defaultTitle = "WELCOME TO MY WORLD ♡";
 let previewVersion = 0;
 
 function setPreview(image, title) {
+  const version = ++previewVersion;
 
-    const version = ++previewVersion;
+  mainPreview.style.opacity = "0";
 
-    mainPreview.style.opacity = "0";
+  setTimeout(() => {
+    if (version !== previewVersion) return;
 
-    setTimeout(() => {
-
-        if (version !== previewVersion) return;
-
-        mainPreview.src = image;
-        previewTitle.textContent = title;
-        mainPreview.style.opacity = "1";
-
-    }, 120);
+    mainPreview.src = image;
+    previewTitle.textContent = title;
+    mainPreview.style.opacity = "1";
+  }, 120);
 }
 
 document.querySelectorAll(".device-project").forEach(project => {
+  const show = () => {
+    setPreview(project.dataset.image, project.dataset.title);
+  };
 
-    const show = () => {
-        setPreview(
-            project.dataset.image,
-            project.dataset.title
-        );
-    };
+  const reset = () => {
+    setPreview(defaultImage, defaultTitle);
+  };
 
-    const reset = () => {
-        setPreview(defaultImage, defaultTitle);
-    };
-
-    project.addEventListener("mouseenter", show);
-    project.addEventListener("mouseleave", reset);
-
-    project.addEventListener("focus", show);
-    project.addEventListener("blur", reset);
-
+  project.addEventListener("mouseenter", show);
+  project.addEventListener("mouseleave", reset);
+  project.addEventListener("focus", show);
+  project.addEventListener("blur", reset);
 });
-
 
 // HORIZONTAL SLIDERS
 
 document.querySelectorAll(".slide-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    const slider = document.getElementById(button.dataset.target);
 
-    button.addEventListener("click", () => {
+    if (!slider) return;
 
-        const slider = document.getElementById(
-            button.dataset.target
-        );
+    const direction = button.classList.contains("next") ? 1 : -1;
+    const firstCard = slider.querySelector(".photo-card");
 
-        if (!slider) return;
+    const gap = 32;
 
-        const direction =
-            button.classList.contains("next") ? 1 : -1;
+    const step = firstCard
+      ? firstCard.getBoundingClientRect().width + gap
+      : slider.clientWidth * 0.8;
 
-        const firstCard = slider.querySelector(".photo-card");
-
-        const gap = 22;
-
-        const step = firstCard
-            ? firstCard.getBoundingClientRect().width + gap
-            : slider.clientWidth * 0.8;
-
-        slider.scrollBy({
-            left: direction * step * 2,
-            behavior: "smooth"
-        });
-
+    slider.scrollBy({
+      left: direction * step * 2,
+      behavior: "smooth"
     });
-
+  });
 });
 
+// Hide broken images
 
 document.querySelectorAll("img").forEach(img => {
-
-    img.addEventListener("error", () => {
-        img.style.visibility = "hidden";
-        img.setAttribute("aria-label", "Image placeholder");
-    });
-
+  img.addEventListener("error", () => {
+    img.style.visibility = "hidden";
+    img.setAttribute("aria-label", "Image placeholder");
+  });
 });
-
 </script>
 
 </body>
