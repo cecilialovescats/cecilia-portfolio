@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Cecilia ♡ Portfolio</title>
 
 <style>
@@ -13,174 +14,166 @@
     box-sizing: border-box;
 }
 
-body {
-    min-height: 100vh;
-    font-family: "Trebuchet MS", sans-serif;
-    background:
-        linear-gradient(#ffffff15, #ffffff15),
-        url("bgph.png");
-        center center / cover fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 35px;
+html {
+    scroll-behavior: smooth;
 }
 
-.home {
-    width: 1050px;
-    max-width: 100%;
+body {
+    font-family: "Trebuchet MS", sans-serif;
+    background: url("bgph.png") center top / 100% auto repeat-y;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #333;
+}
+
+
+.hero {
+    min-height: 530px;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 390px;
-    gap: 35px;
     align-items: center;
+    gap: 30px;
+    padding: 45px 6%;
 }
 
 .intro {
-    text-align: center;
-    padding: 25px;
+    align-self: start;
+    padding-top: 55px;
+    text-align: left;
 }
 
 .intro h1 {
-    font-size: clamp(40px, 7vw, 75px);
-    color: white;
-    -webkit-text-stroke: 1.5px #d68eb5;
-    text-shadow: 3px 4px #b878a2;
-    letter-spacing: 3px;
+    font-size: clamp(55px, 8vw, 90px);
+    font-weight: 400;
+    color: #000;
+    letter-spacing: -3px;
 }
 
 .intro p {
-    display: inline-block;
-    margin-top: 15px;
-    background: #ffffffd9;
-    color: #b47b9f;
-    border-radius: 30px;
-    padding: 12px 22px;
-    font-size: 13px;
-    letter-spacing: 1px;
+    margin-top: 12px;
+    font-size: 16px;
+    color: #a46e94;
+    letter-spacing: 2px;
 }
 
-.intro .decoration {
-    font-size: 32px;
+.intro .stars {
+    font-size: 30px;
     margin-top: 20px;
-    letter-spacing: 15px;
+    letter-spacing: 10px;
 }
+
 
 .device {
+    width: 100%;
     background: linear-gradient(145deg,#ffc3d9,#ec82ad);
-    padding: 13px;
-    border-radius: 32px;
-    border: 2px solid #fff1f7;
+    padding: 12px;
+    border-radius: 25px;
+    border: 2px solid white;
     box-shadow:
-        0 9px 0 #d36d9b,
-        0 20px 35px #85546b55;
-    position: relative;
+        0 8px 0 #d36d9b,
+        0 15px 25px #85546b55;
 }
 
 .screen {
     background: #a9bdf2;
     border: 5px solid #f8b3cf;
-    border-radius: 24px;
-    padding: 15px;
+    border-radius: 19px;
+    padding: 12px;
 }
 
 .display {
-    background: linear-gradient(145deg,#fff,#fff6fb);
-    border: 7px solid #e7e9ec;
-    border-radius: 24px;
-    padding: 12px;
-    box-shadow: inset 0 0 12px #bbb;
+    background: white;
+    border: 6px solid #e7e9ec;
+    border-radius: 19px;
+    padding: 8px;
+    box-shadow: inset 0 0 10px #bbb;
 }
 
 .display-image {
-    height: 215px;
-    position: relative;
+    height: 180px;
     overflow: hidden;
-    border-radius: 15px;
+    position: relative;
     background: #f9e9f3;
+    border-radius: 12px;
 }
 
 .display-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity .3s ease;
+    transition: opacity .3s;
 }
 
 .display-label {
     position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
+    padding: 10px;
     text-align: center;
-    padding: 12px;
-    color: #a36e9b;
-    background: #ffffffc9;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     letter-spacing: 2px;
+    color: #a36e9b;
+    background: #ffffffd9;
 }
 
 .panel-title {
+    text-align: center;
     color: white;
-    text-align: center;
-    font-size: 16px;
-    letter-spacing: 3px;
-    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 2px;
     text-shadow: 2px 2px #897ab9;
-    margin: 17px 0 13px;
+    margin: 15px 0 12px;
 }
 
-.projects {
+.device-projects {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(3,1fr);
+    gap: 8px;
 }
 
-.project {
-    text-decoration: none;
-    background: linear-gradient(145deg,#fff,#fff0f7);
-    border: 3px solid #ffffffa8;
-    border-radius: 15px;
-    padding: 5px;
-    text-align: center;
-    transition: .25s;
-    box-shadow: inset 0 0 6px #ddd;
-}
-
-.project:hover,
-.project:focus-visible {
-    transform: translateY(-5px) scale(1.04);
+.device-project {
     background: white;
-    box-shadow: 0 6px 12px #735b8c55;
-    outline: none;
+    border: 3px solid #ffffffb0;
+    border-radius: 12px;
+    text-decoration: none;
+    padding: 4px;
+    text-align: center;
+    transition: .2s;
 }
 
-.project img {
+.device-project:hover {
+    transform: scale(1.06);
+}
+
+.device-project img {
     width: 100%;
-    height: 66px;
+    height: 48px;
     object-fit: cover;
-    border-radius: 9px;
-    display: block;
+    border-radius: 7px;
+    background: #cbd4db;
 }
 
-.project span {
+.device-project span {
     display: block;
-    color: #a4779b;
     font-size: 9px;
+    color: #a4779b;
     font-weight: bold;
-    letter-spacing: .5px;
-    padding: 7px 0 3px;
+    padding: 5px 0 2px;
 }
 
 .controls {
     display: flex;
     justify-content: center;
-    gap: 28px;
-    padding: 13px 0 3px;
+    gap: 25px;
+    padding: 13px 0 2px;
 }
 
 .controls span {
-    width: 27px;
-    height: 27px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     background: linear-gradient(145deg,#a4f47f,#58d64e);
     border: 3px solid #a3e68f;
@@ -189,66 +182,222 @@ body {
 
 .controls span:first-child {
     width: 38px;
-    height: 18px;
+    height: 17px;
     margin-top: 5px;
+}
+
+
+.gallery-section {
+    padding: 45px 5%;
+    width: 100%;
+}
+
+.gallery-heading {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+.gallery-heading span {
+    color: #d887b3;
+}
+
+.slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.slider {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 5px 3px 15px;
+    width: 100%;
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+
+.photo-card {
+    flex: 0 0 155px;
+    height: 155px;
+    background: #cbd4db;
     border-radius: 20px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    display: block;
+    position: relative;
+    text-decoration: none;
+    transition: .3s;
+    box-shadow: 0 3px 10px #7772;
+}
+
+.photo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 15px #7774;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-card .photo-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 5px 9px;
+    text-align: center;
+    background: linear-gradient(transparent,#0009);
+    color: white;
+    font-size: 11px;
+    opacity: 0;
+    transition: .3s;
+}
+
+.photo-card:hover .photo-name {
+    opacity: 1;
+}
+
+
+.slide-btn {
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: #f4a6c7;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 3px 6px #7774;
+    transition: .2s;
+}
+
+.slide-btn:hover {
+    background: #d989b2;
+    transform: scale(1.1);
+}
+
+.slide-btn.prev {
+    margin-right: 10px;
+}
+
+.slide-btn.next {
+    margin-left: 10px;
+}
+
+
+.section-note {
+    font-size: 12px;
+    color: #555;
+    margin-top: 12px;
+    letter-spacing: .5px;
+}
+
+.gallery-section:nth-of-type(3) {
+    padding-top: 20px;
+}
+
+.gallery-section:nth-of-type(4) {
+    padding-top: 20px;
 }
 
 .footer {
+    padding: 35px 15px;
     text-align: center;
-    color: white;
-    font-size: 11px;
-    font-weight: bold;
+    font-size: 12px;
+    color: #a46e94;
     letter-spacing: 2px;
-    text-shadow: 1px 2px #a36e9b;
-    margin-top: 17px;
 }
 
-@media(max-width: 750px) {
+
+@media(max-width:750px) {
+
     body {
-        padding: 20px 12px;
+        background-size: auto 100%;
         background-attachment: scroll;
     }
 
-    .home {
+    .hero {
         grid-template-columns: 1fr;
-        gap: 15px;
-        max-width: 430px;
+        gap: 25px;
+        padding: 25px 18px;
     }
 
     .intro {
-        padding: 5px;
+        padding-top: 10px;
+        text-align: center;
     }
 
     .intro h1 {
-        font-size: 43px;
+        font-size: 55px;
     }
 
-    .display-image {
-        height: 220px;
+    .device {
+        max-width: 420px;
+        margin: auto;
+    }
+
+    .gallery-section {
+        padding: 30px 18px;
+    }
+
+    .photo-card {
+        flex-basis: 135px;
+        height: 135px;
+    }
+
+    .slide-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+@media(max-width:420px) {
+    .photo-card {
+        flex-basis: 120px;
+        height: 120px;
+    }
+
+    .slider {
+        gap: 12px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="home">
 
-    <section class="intro">
+<section class="hero">
 
-        <h1>CECILIA ♡</h1>
+    <div class="intro">
 
-        <p>WELCOME TO MY LITTLE WORLD</p>
+        <h1>welcome</h1>
 
-        <div class="decoration">
-            ✿ ☆ ♡ ☆ ✿
-        </div>
+        <p>WELCOME TO MY LITTLE WORLD ♡</p>
 
-    </section>
+        <div class="stars">✿ ☆ ♡ ☆ ✿</div>
 
+    </div>
 
-    <section class="device">
+    <div class="device">
 
         <div class="screen">
 
@@ -257,7 +406,7 @@ body {
                 <div class="display-image">
 
                     <img
-                        id="preview"
+                        id="mainPreview"
                         src="images/profile.jpg"
                         alt="Portfolio preview"
                     >
@@ -270,64 +419,51 @@ body {
 
             </div>
 
-
             <h2 class="panel-title">
                 MY LITTLE WORLD ♡
             </h2>
 
-            <div class="projects">
+            <div class="device-projects">
 
-                <a href="fonts.html"
-                   class="project"
+                <a href="fonts.html" class="device-project"
                    data-image="images/fonts.jpg"
                    data-title="MY FONTS">
-
-                    <img src="images/fonts.jpg" alt="Fonts project">
+                    <img src="images/fonts.jpg" alt="Fonts">
                     <span>FONTS</span>
                 </a>
 
-                <a href="design.html"
-                   class="project"
+                <a href="design.html" class="device-project"
                    data-image="images/design.jpg"
                    data-title="MY DESIGNS">
-
-                    <img src="images/design.jpg" alt="Design project">
+                    <img src="images/design.jpg" alt="Design">
                     <span>DESIGN</span>
                 </a>
 
-                <a href="photo.html"
-                   class="project"
+                <a href="photo.html" class="device-project"
                    data-image="images/photo.jpg"
                    data-title="PHOTOGRAPHY">
-
-                    <img src="images/photo.jpg" alt="Photography project">
+                    <img src="images/photo.jpg" alt="Photography">
                     <span>PHOTO</span>
                 </a>
 
-                <a href="drawing.html"
-                   class="project"
+                <a href="drawing.html" class="device-project"
                    data-image="images/drawing.jpg"
-                   data-title="MY DRAWINGS">
-
-                    <img src="images/drawing.jpg" alt="Drawing project">
+                   data-title="DRAWINGS">
+                    <img src="images/drawing.jpg" alt="Drawings">
                     <span>DRAWING</span>
                 </a>
 
-                <a href="art.html"
-                   class="project"
+                <a href="art.html" class="device-project"
                    data-image="images/art.jpg"
                    data-title="MY ART">
-
-                    <img src="images/art.jpg" alt="Art project">
+                    <img src="images/art.jpg" alt="Art">
                     <span>ART</span>
                 </a>
 
-                <a href="creative.html"
-                   class="project"
+                <a href="creative.html" class="device-project"
                    data-image="images/creative.jpg"
                    data-title="CREATIVE WORK">
-
-                    <img src="images/creative.jpg" alt="Creative work">
+                    <img src="images/creative.jpg" alt="Creative">
                     <span>CREATIVE</span>
                 </a>
 
@@ -341,54 +477,218 @@ body {
             <span></span>
         </div>
 
-    </section>
+    </div>
 
-</div>
+</section>
+
+
+
+
+<section class="gallery-section">
+
+    <h2 class="gallery-heading">
+        my work in details <span>♡</span>
+    </h2>
+
+    <div class="slider-wrapper">
+
+        <button class="slide-btn prev" data-target="workSlider"
+                aria-label="Previous projects">‹</button>
+
+        <div class="slider" id="workSlider">
+
+            <a href="project1.html" class="photo-card">
+                <img src="images/work1.jpg" alt="Project 1">
+                <span class="photo-name">Project 01</span>
+            </a>
+
+            <a href="project2.html" class="photo-card">
+                <img src="images/work2.jpg" alt="Project 2">
+                <span class="photo-name">Project 02</span>
+            </a>
+
+            <a href="project3.html" class="photo-card">
+                <img src="images/work3.jpg" alt="Project 3">
+                <span class="photo-name">Project 03</span>
+            </a>
+
+            <a href="project4.html" class="photo-card">
+                <img src="images/work4.jpg" alt="Project 4">
+                <span class="photo-name">Project 04</span>
+            </a>
+
+            <a href="project5.html" class="photo-card">
+                <img src="images/work5.jpg" alt="Project 5">
+                <span class="photo-name">Project 05</span>
+            </a>
+
+            <a href="project6.html" class="photo-card">
+                <img src="images/work6.jpg" alt="Project 6">
+                <span class="photo-name">Project 06</span>
+            </a>
+
+        </div>
+
+        <button class="slide-btn next" data-target="workSlider"
+                aria-label="Next projects">›</button>
+
+    </div>
+
+    <p class="section-note">
+        big project teaches me graphic design and social media ♡
+    </p>
+
+</section>
+
+
+
+
+<section class="gallery-section">
+
+    <h2 class="gallery-heading">
+        photography <span>✿</span>
+    </h2>
+
+    <div class="slider-wrapper">
+
+        <button class="slide-btn prev" data-target="photoSlider"
+                aria-label="Previous photos">‹</button>
+
+        <div class="slider" id="photoSlider">
+
+            <a href="photo1.html" class="photo-card">
+                <img src="images/photo1.jpg" alt="Photography 1">
+            </a>
+
+            <a href="photo2.html" class="photo-card">
+                <img src="images/photo2.jpg" alt="Photography 2">
+            </a>
+
+            <a href="photo3.html" class="photo-card">
+                <img src="images/photo3.jpg" alt="Photography 3">
+            </a>
+
+            <a href="photo4.html" class="photo-card">
+                <img src="images/photo4.jpg" alt="Photography 4">
+            </a>
+
+            <a href="photo5.html" class="photo-card">
+                <img src="images/photo5.jpg" alt="Photography 5">
+            </a>
+
+            <a href="photo6.html" class="photo-card">
+                <img src="images/photo6.jpg" alt="Photography 6">
+            </a>
+
+        </div>
+
+        <button class="slide-btn next" data-target="photoSlider"
+                aria-label="Next photos">›</button>
+
+    </div>
+
+</section>
+
+
+
+<section class="gallery-section">
+
+    <h2 class="gallery-heading">
+        drawings <span>♡</span>
+    </h2>
+
+    <div class="slider-wrapper">
+
+        <button class="slide-btn prev" data-target="drawingSlider"
+                aria-label="Previous drawings">‹</button>
+
+        <div class="slider" id="drawingSlider">
+
+            <a href="drawing1.html" class="photo-card">
+                <img src="images/drawing1.jpg" alt="Drawing 1">
+            </a>
+
+            <a href="drawing2.html" class="photo-card">
+                <img src="images/drawing2.jpg" alt="Drawing 2">
+            </a>
+
+            <a href="drawing3.html" class="photo-card">
+                <img src="images/drawing3.jpg" alt="Drawing 3">
+            </a>
+
+            <a href="drawing4.html" class="photo-card">
+                <img src="images/drawing4.jpg" alt="Drawing 4">
+            </a>
+
+            <a href="drawing5.html" class="photo-card">
+                <img src="images/drawing5.jpg" alt="Drawing 5">
+            </a>
+
+            <a href="drawing6.html" class="photo-card">
+                <img src="images/drawing6.jpg" alt="Drawing 6">
+            </a>
+
+        </div>
+
+        <button class="slide-btn next" data-target="drawingSlider"
+                aria-label="Next drawings">›</button>
+
+    </div>
+
+</section>
+
+
+<footer class="footer">
+    ♡ THANK YOU FOR VISITING CECILIA'S WORLD ♡
+</footer>
+
 
 <script>
-const preview = document.getElementById("preview");
+
+
+const mainPreview = document.getElementById("mainPreview");
 const previewTitle = document.getElementById("previewTitle");
 
 const defaultImage = "images/profile.jpg";
 const defaultTitle = "WELCOME TO MY WORLD ♡";
 
-const projectLinks = document.querySelectorAll(".project");
+document.querySelectorAll(".device-project").forEach(project => {
 
-function changePreview(project) {
-    preview.style.opacity = "0";
-
-    setTimeout(() => {
-        preview.src = project.dataset.image;
+    function showPreview() {
+        mainPreview.src = project.dataset.image;
         previewTitle.textContent = project.dataset.title;
-        preview.style.opacity = "1";
-    }, 150);
-}
+    }
 
-function resetPreview() {
-    preview.style.opacity = "0";
-
-    setTimeout(() => {
-        preview.src = defaultImage;
+    function resetPreview() {
+        mainPreview.src = defaultImage;
         previewTitle.textContent = defaultTitle;
-        preview.style.opacity = "1";
-    }, 150);
-}
+    }
 
-projectLinks.forEach(project => {
-
-    project.addEventListener("mouseenter", () => {
-        changePreview(project);
-    });
-
+    project.addEventListener("mouseenter", showPreview);
     project.addEventListener("mouseleave", resetPreview);
 
-    project.addEventListener("focus", () => {
-        changePreview(project);
-    });
-
+    project.addEventListener("focus", showPreview);
     project.addEventListener("blur", resetPreview);
 
 });
+
+document.querySelectorAll(".slide-btn").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const slider = document.getElementById(button.dataset.target);
+
+        const direction = button.classList.contains("next") ? 1 : -1;
+
+        slider.scrollBy({
+            left: direction * (slider.clientWidth * 0.75),
+            behavior: "smooth"
+        });
+
+    });
+
+});
+
 </script>
 
 </body>
