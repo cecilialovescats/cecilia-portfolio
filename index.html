@@ -35,8 +35,6 @@ body {
   background-attachment: fixed;
 }
 
-/* MAIN WEBSITE */
-
 .site-shell {
   position: relative;
   width: min(824px, 100%);
@@ -45,8 +43,6 @@ body {
   overflow: hidden;
   background: #fcecf4 url("bgph.png") center top / 100% auto repeat-y;
 }
-
-/* WELCOME SECTION */
 
 .hero {
   position: relative;
@@ -73,8 +69,6 @@ body {
 .intro .stars {
   display: none;
 }
-
-/* PINK DEVICE */
 
 .device {
   position: absolute;
@@ -143,7 +137,6 @@ body {
   text-shadow: 1px 1px #897ab9;
 }
 
-/* DEVICE PROJECT BUTTONS */
 
 .device-projects {
   display: grid;
@@ -196,8 +189,6 @@ body {
   overflow-wrap: anywhere;
 }
 
-/* DEVICE BUTTONS */
-
 .controls {
   display: flex;
   justify-content: center;
@@ -222,8 +213,6 @@ body {
   border-radius: 20px;
 }
 
-/* GALLERY SECTIONS */
-
 .gallery-section {
   position: relative;
   width: 100%;
@@ -241,7 +230,6 @@ body {
   color: #d887b3;
 }
 
-/* MY WORK */
 
 .work-section {
   height: 929px;
@@ -273,7 +261,6 @@ body {
   text-align: center;
 }
 
-/* HORIZONTAL SLIDERS */
 
 .slider-wrapper {
   position: relative;
@@ -298,7 +285,6 @@ body {
   display: none;
 }
 
-/* GALLERY CARDS */
 
 .photo-card {
   position: relative;
@@ -347,7 +333,7 @@ body {
   opacity: 1;
 }
 
-/* PHOTOGRAPHY */
+
 
 .photo-section {
   height: 230px;
@@ -373,8 +359,6 @@ body {
   border-radius: 20px;
 }
 
-/* DRAWINGS */
-
 .drawing-section {
   min-height: 260px;
   padding-top: 0;
@@ -383,8 +367,6 @@ body {
 .drawing-section .gallery-heading {
   margin-bottom: 18px;
 }
-
-/* SLIDER ARROWS */
 
 .slide-btn {
   position: absolute;
@@ -423,7 +405,6 @@ body {
   right: 5px;
 }
 
-/* FOOTER */
 
 .footer {
   padding: 25px 12px 35px;
@@ -432,8 +413,6 @@ body {
   font-size: 11px;
   letter-spacing: 2px;
 }
-
-/* MOBILE */
 
 @media (max-width: 650px) {
 
@@ -522,7 +501,7 @@ body {
 
 <main class="site-shell">
 
-  <!-- WELCOME -->
+  
 
   <section class="hero">
 
@@ -530,7 +509,6 @@ body {
       <h1>welcome</h1>
     </div>
 
-    <!-- PINK DEVICE -->
 
     <div class="device">
 
@@ -558,7 +536,7 @@ body {
 
         <div class="device-projects">
 
-          <!-- FONTS -->
+      
 
           <a href="font.html"
              class="device-project"
@@ -570,7 +548,7 @@ body {
 
           </a>
 
-          <!-- DESIGN -->
+        
 
           <a href="design.html"
              class="device-project"
@@ -582,7 +560,7 @@ body {
 
           </a>
 
-          <!-- PHOTOGRAPHY -->
+         
 
           <a href="photography.html"
              class="device-project"
@@ -594,7 +572,6 @@ body {
 
           </a>
 
-          <!-- DRAWINGS -->
 
           <a href="drawings.html"
              class="device-project"
@@ -606,8 +583,7 @@ body {
 
           </a>
 
-          <!-- RESUME -->
-
+     
           <a href="resume.html"
              class="device-project"
              data-image="images/art.jpg"
@@ -618,8 +594,7 @@ body {
 
           </a>
 
-          <!-- GITHUB -->
-
+       
           <a href="https://github.com/cecilialovescats"
              class="device-project"
              data-image="images/creative.jpg"
@@ -642,8 +617,6 @@ body {
     </div>
 
   </section>
-
-  <!-- MY WORK IN DETAILS -->
 
   <section class="gallery-section work-section">
 
@@ -682,8 +655,6 @@ body {
     </p>
 
   </section>
-
-  <!-- PHOTOGRAPHY -->
 
   <section class="gallery-section photo-section">
 
@@ -733,8 +704,7 @@ body {
 
   </section>
 
-  <!-- DRAWINGS -->
-
+ 
   <section class="gallery-section drawing-section">
 
     <h2 class="gallery-heading">
@@ -779,12 +749,11 @@ body {
 
 <script>
 
-/* DEVICE HOVER PREVIEW */
 
 const mainPreview = document.getElementById("mainPreview");
 const previewTitle = document.getElementById("previewTitle");
 
-const defaultImage = "images/profile.jpg";
+const defaultImage = "images/design.png";
 const defaultTitle = "WELCOME TO MY WORLD ♡";
 
 function showProjectPreview(project) {
