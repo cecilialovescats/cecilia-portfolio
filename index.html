@@ -31,23 +31,23 @@ body {
   background: #fcecf4 url("bgph.png") center top / 100% auto no-repeat;
 }
 
-/* FIRST SCREEN */
+/* WELCOME SECTION */
 
 .hero {
   position: relative;
   width: 100%;
-  height: 604px;
+  height: 464px;
 }
 
 .intro {
   position: absolute;
-  top: 90px;
-  left: 5.5%;
+  top: 145px;
+  left: 5.2%;
   z-index: 1;
 }
 
 .intro h1 {
-  font-size: clamp(52px, 6vw, 82px);
+  font-size: clamp(48px, 8.5vw, 78px);
   line-height: 1;
   font-weight: 400;
   letter-spacing: -3px;
@@ -63,38 +63,37 @@ body {
 
 .device {
   position: absolute;
-  top: 311px;
-  right: 19.6%;
-  width: 338px;
-  padding: 12px;
-  border: 3px solid #fff4fa;
-  border-radius: 34px;
+  top: 511px;
+  right: 30%;
+  width: 225px;
+  padding: 8px;
+  border: 2px solid #fff4fa;
+  border-radius: 24px;
   background: linear-gradient(145deg, #ffc3d9, #ec82ad);
-  box-shadow: 0 7px 0 #d36d9b,
-              0 14px 26px #85546b40;
-  z-index: 2;
+  box-shadow: 0 6px 0 #d36d9b, 0 12px 22px #85546b40;
+  z-index: 5;
 }
 
 .screen {
-  padding: 10px;
-  border: 5px solid #f8b3cf;
-  border-radius: 25px;
+  padding: 8px;
+  border: 4px solid #f8b3cf;
+  border-radius: 18px;
   background: #a9bdf2;
 }
 
 .display {
-  padding: 9px;
-  border: 6px solid #e7e9ec;
-  border-radius: 22px;
+  padding: 7px;
+  border: 5px solid #e7e9ec;
+  border-radius: 16px;
   background: #fff;
   box-shadow: inset 0 0 8px #bbb;
 }
 
 .display-image {
   position: relative;
-  height: 122px;
+  height: 105px;
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 10px;
   background: #f9e9f3;
 }
 
@@ -111,36 +110,36 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 10px 3px;
+  padding: 7px 3px;
   color: #a36e9b;
   background: #ffffffdf;
   text-align: center;
-  font-size: 10px;
+  font-size: 8px;
   font-weight: bold;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
 }
 
 .panel-title {
-  margin: 17px 0 12px;
+  margin: 11px 0 9px;
   color: white;
   text-align: center;
-  font-size: 14px;
-  letter-spacing: 1.7px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
   text-shadow: 1px 1px #897ab9;
 }
 
 .device-projects {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 7px;
+  gap: 5px;
 }
 
 .device-project {
   min-width: 0;
-  min-height: 101px;
-  padding: 6px;
+  height: 60px;
+  padding: 4px;
   border: 2px solid #ffffffc9;
-  border-radius: 16px;
+  border-radius: 10px;
   background: linear-gradient(145deg, #fff, #fff0f7);
   text-align: center;
   text-decoration: none;
@@ -155,19 +154,17 @@ body {
 }
 
 .device-project img {
-  display: block;
-  width: 100%;
-  height: 64px;
-  border-radius: 9px;
-  object-fit: cover;
-  background: var(--placeholder);
+  display: none;
 }
 
 .device-project span {
-  display: block;
-  padding: 5px 0 1px;
+  display: flex;
+  height: 100%;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 0 4px;
   color: var(--text-pink);
-  font-size: 9px;
+  font-size: 7px;
   font-weight: bold;
   overflow-wrap: anywhere;
 }
@@ -177,7 +174,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 15px;
-  padding: 12px 0 2px;
+  padding: 10px 0 1px;
 }
 
 .controls span {
@@ -205,9 +202,8 @@ body {
 }
 
 .gallery-heading {
-  margin: 0 0 15px;
   color: #171717;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: normal;
   letter-spacing: .3px;
 }
@@ -216,37 +212,39 @@ body {
   color: #d887b3;
 }
 
-/* WORK GALLERY */
+/* MY WORK IN DETAILS */
 
 .work-section {
-  min-height: 435px;
-  padding-top: 0;
+  height: 929px;
+  min-height: 929px;
 }
 
 .work-section .gallery-heading {
-  padding-left: 28%;
+  position: absolute;
+  top: 420px;
+  left: 28%;
+  margin: 0;
 }
 
-/* PHOTOGRAPHY */
-
-.photo-section {
-  min-height: 292px;
-  padding-top: 0;
+.work-section .slider-wrapper {
+  position: absolute;
+  top: 626px;
+  left: 0;
 }
 
-.photo-section .gallery-heading,
-.drawing-section .gallery-heading {
-  padding-left: 36.5%;
+.work-section .section-note {
+  position: absolute;
+  top: 812px;
+  left: 26%;
+  width: 145px;
+  margin: 0;
+  color: #222;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
 }
 
-/* DRAWINGS */
-
-.drawing-section {
-  min-height: 290px;
-  padding-top: 0;
-}
-
-/* SLIDERS */
+/* HORIZONTAL GALLERIES */
 
 .slider-wrapper {
   position: relative;
@@ -257,10 +255,10 @@ body {
 
 .slider {
   display: flex;
-  gap: 32px;
+  gap: 26px;
   width: 100%;
   overflow-x: auto;
-  padding: 0 0 14px;
+  padding: 0 0 8px;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -271,15 +269,13 @@ body {
   display: none;
 }
 
-/* IMAGE CARDS */
-
 .photo-card {
   position: relative;
   display: block;
-  flex: 0 0 200px;
-  height: 200px;
+  flex: 0 0 140px;
+  height: 140px;
   overflow: hidden;
-  border-radius: 25px;
+  border-radius: 20px;
   background: var(--placeholder);
   text-decoration: none;
   scroll-snap-align: start;
@@ -288,7 +284,7 @@ body {
 
 .photo-card:hover,
 .photo-card:focus-visible {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: 0 7px 14px #755b8050;
   outline: none;
 }
@@ -320,39 +316,58 @@ body {
   opacity: 1;
 }
 
-/* SMALLER LOWER GALLERIES */
+/* PHOTOGRAPHY */
+
+.photo-section {
+  height: 230px;
+  min-height: 230px;
+  padding-top: 28px;
+}
+
+.photo-section .gallery-heading,
+.drawing-section .gallery-heading {
+  margin: 0 0 18px 36%;
+}
+
+.photo-section .slider-wrapper,
+.drawing-section .slider-wrapper {
+  width: 64%;
+  margin-left: 36%;
+}
 
 .photo-section .photo-card,
 .drawing-section .photo-card {
-  flex-basis: 156px;
-  height: 156px;
+  flex: 0 0 110px;
+  height: 110px;
+  border-radius: 20px;
 }
 
-.section-note {
-  margin-top: 20px;
-  margin-left: 29%;
-  max-width: 250px;
-  color: #222;
-  font-size: 14px;
-  line-height: 1.5;
-  text-align: center;
+/* DRAWINGS */
+
+.drawing-section {
+  min-height: 260px;
+  padding-top: 0;
 }
 
-/* SLIDE ARROWS */
+.drawing-section .gallery-heading {
+  margin-bottom: 18px;
+}
+
+/* SLIDER ARROWS */
 
 .slide-btn {
   position: absolute;
   top: 50%;
-  z-index: 3;
+  z-index: 6;
   display: grid;
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   place-items: center;
   border: 2px solid white;
   border-radius: 50%;
   background: #f3a6c6ef;
   color: white;
-  font-size: 22px;
+  font-size: 21px;
   line-height: 1;
   cursor: pointer;
   opacity: 0;
@@ -370,11 +385,11 @@ body {
 }
 
 .slide-btn.prev {
-  left: 8px;
+  left: 5px;
 }
 
 .slide-btn.next {
-  right: 8px;
+  right: 5px;
 }
 
 /* FOOTER */
@@ -387,9 +402,9 @@ body {
   letter-spacing: 2px;
 }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE */
 
-@media (max-width: 900px) {
+@media (max-width: 650px) {
   body {
     background-size: auto 100%;
     background-position: center top;
@@ -397,75 +412,63 @@ body {
   }
 
   .hero {
-    height: 760px;
+    height: 450px;
   }
 
   .intro {
-    top: 70px;
-    left: 6%;
+    top: 105px;
+    left: 5%;
   }
 
   .device {
-    top: 300px;
-    right: 6%;
-    width: min(338px, 88vw);
+    top: 310px;
+    right: 5%;
+    width: 225px;
   }
 
   .work-section {
-    min-height: 390px;
+    height: 520px;
+    min-height: 520px;
   }
 
-  .work-section .gallery-heading,
-  .photo-section .gallery-heading,
-  .drawing-section .gallery-heading {
-    padding-left: 7%;
+  .work-section .gallery-heading {
+    top: 25px;
+    left: 7%;
   }
 
-  .section-note {
-    margin-left: 7%;
+  .work-section .slider-wrapper {
+    top: 65px;
+  }
+
+  .work-section .section-note {
+    top: 225px;
+    left: 7%;
     text-align: left;
   }
 
-  .photo-card {
-    flex-basis: 170px;
-    height: 170px;
+  .photo-section {
+    height: 190px;
+    min-height: 190px;
+    padding-top: 20px;
   }
 
-  .photo-section .photo-card,
-  .drawing-section .photo-card {
-    flex-basis: 140px;
-    height: 140px;
+  .photo-section .gallery-heading,
+  .drawing-section .gallery-heading {
+    margin-left: 7%;
+  }
+
+  .photo-section .slider-wrapper,
+  .drawing-section .slider-wrapper {
+    width: 93%;
+    margin-left: 7%;
+  }
+
+  .drawing-section {
+    min-height: 190px;
   }
 
   .slide-btn {
     opacity: 1;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    height: 720px;
-  }
-
-  .device {
-    top: 285px;
-    right: 5%;
-    width: min(310px, 90vw);
-  }
-
-  .slider {
-    gap: 16px;
-  }
-
-  .photo-card {
-    flex-basis: 145px;
-    height: 145px;
-  }
-
-  .photo-section .photo-card,
-  .drawing-section .photo-card {
-    flex-basis: 118px;
-    height: 118px;
   }
 }
 
@@ -501,8 +504,8 @@ body {
     <div class="screen">
 
       <div class="display">
-        <div class="display-image">
 
+        <div class="display-image">
           <img
             id="mainPreview"
             src="images/profile.jpg"
@@ -512,8 +515,8 @@ body {
           <div class="display-label" id="previewTitle">
             WELCOME TO MY WORLD ♡
           </div>
-
         </div>
+
       </div>
 
       <h2 class="panel-title">MY LITTLE WORLD ♡</h2>
@@ -787,7 +790,7 @@ document.querySelectorAll(".slide-btn").forEach(button => {
     const direction = button.classList.contains("next") ? 1 : -1;
     const firstCard = slider.querySelector(".photo-card");
 
-    const gap = 32;
+    const gap = 26;
 
     const step = firstCard
       ? firstCard.getBoundingClientRect().width + gap
@@ -800,7 +803,7 @@ document.querySelectorAll(".slide-btn").forEach(button => {
   });
 });
 
-// Hide broken images
+// HIDE BROKEN IMAGES
 
 document.querySelectorAll("img").forEach(img => {
   img.addEventListener("error", () => {
