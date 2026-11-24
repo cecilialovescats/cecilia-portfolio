@@ -1,124 +1,192 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Doodles Magazine</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:#e9edd6;
-  font-family:"Courier New", cursive;
-  overflow:hidden;
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #e9edd6;
+  font-family: "Courier New", cursive;
+  overflow-x: hidden;
 }
 
-.book{
-  position:relative;
-  width:800px;
-  height:500px;
-  perspective:2000px;
+.book {
+  position: relative;
+  width: min(800px, 95vw);
+  height: min(500px, 65vw);
+  min-height: 320px;
+  perspective: 2000px;
+  margin: 20px auto;
 }
 
-
-.page{
-  position:absolute;
-  width:400px;
-  height:500px;
-  right:0;
-  transform-origin:left;
-  transition:transform 1.2s ease;
-  transform-style:preserve-3d;
-  cursor:pointer;
+.page {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  transform-origin: left;
+  transition: transform 1s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
 }
 
 .front,
-.back{
-  position:absolute;
-  width:100%;
-  height:100%;
-  backface-visibility:hidden;
-  overflow:hidden;
-  background:#fffef8;
-  border:1px solid #ddd;
-  box-shadow:0 0 10px rgba(0,0,0,0.08);
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: #fffef8;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
 }
 
-.front{
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.back{
-  transform:rotateY(180deg);
+.back {
+  transform: rotateY(180deg);
 }
 
-.page img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-
-.caption{
-  position:absolute;
-  bottom:20px;
-  left:20px;
-  background:rgba(255,255,255,0.4);
-  padding:6px 12px;
-  font-size:14px;
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255,255,255,0.7);
+  padding: 6px 12px;
+  font-size: 14px;
 }
 
-
-.title-page{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  font-size:24px;
-  text-align:center;
+.title-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  text-align: center;
+  padding: 15px;
 }
 
-.flipped{
-  transform:rotateY(-180deg);
+small {
+  font-size: 16px;
+  margin-top: 10px;
 }
 
-
-.book::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:0;
-  width:6px;
-  height:100%;
-  background:#d8dcc8;
-  transform:translateX(-50%);
-  z-index:100;
+.flipped {
+  transform: rotateY(-180deg);
 }
 
-small{
-  font-size:16px;
-  margin-top:10px;
+.book::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: #d8dcc8;
+  transform: translateX(-50%);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.navigation {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 15px;
+}
+
+button {
+  background: #d8dcc8;
+  border: 1px solid #b8bea5;
+  padding: 10px 20px;
+  font-family: "Courier New", cursive;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background: #c7cdb3;
+}
+
+#pageNumber {
+  font-size: 14px;
+}
+
+.links {
+  margin: 15px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.links a {
+  color: #505746;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .book {
+    height: 65vw;
+    min-height: 260px;
+  }
+
+  .caption {
+    font-size: 10px;
+    bottom: 10px;
+    left: 8px;
+    padding: 4px 6px;
+  }
+
+  .title-page {
+    font-size: 17px;
+  }
+
+  small {
+    font-size: 12px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="book">
+<div class="book" id="book">
 
-  <div class="page" style="z-index:5;">
+ 
+  <div class="page" style="z-index: 12;">
     <div class="front">
-      <img src="images/art (1).png" alt="Cover">
+      <img src="images/art (1).png" alt="Magazine cover">
     </div>
     <div class="back title-page">
       Doodles Magazine
@@ -126,84 +194,90 @@ small{
     </div>
   </div>
 
-
-  <div class="page" style="z-index:4;">
+  <div class="page" style="z-index: 11;">
     <div class="front">
-      <img src="images/bee.png">
+      <img src="images/bee.png" alt="Bee drawing">
       <div class="caption">bee?</div>
     </div>
     <div class="back">
-      <img src="images/Screenshot_22-4-2026_94811_.jpeg">
+      <img src="images/Screenshot_22-4-2026_94811_.jpeg" alt="Butterfly">
       <div class="caption">butterfly dancing</div>
     </div>
   </div>
 
 
-  <div class="page" style="z-index:3;">
+  <div class="page" style="z-index: 10;">
     <div class="front">
-      <img src="images/Screenshot_22-4-2026_94926_.jpeg">
+      <img src="images/Screenshot_22-4-2026_94926_.jpeg" alt="Dream vacation">
       <div class="caption">dream vacation</div>
     </div>
     <div class="back">
-      <img src="images/Screenshot_22-4-2026_95047_.jpeg">
+      <img src="images/Screenshot_22-4-2026_95047_.jpeg" alt="Ocean">
       <div class="caption">ocean sideway</div>
     </div>
   </div>
 
-
-  <div class="page" style="z-index:2;">
+  <div class="page" style="z-index: 9;">
     <div class="front">
-      <img src="images/Screenshot_22-4-2026_9506_.jpeg">
+      <img src="images/Screenshot_22-4-2026_9506_.jpeg" alt="Blossom">
       <div class="caption">blossom</div>
     </div>
     <div class="back">
-      <img src="images/Screenshot_22-4-2026_9511_.jpeg">
+      <img src="images/Screenshot_22-4-2026_9511_.jpeg" alt="Bamboo">
       <div class="caption">bamboo</div>
     </div>
   </div>
-  <div class="page" style="z-index:2;">
+
+
+  <div class="page" style="z-index: 8;">
     <div class="front">
-      <img src="images/ray.jpg">
+      <img src="images/ray.jpg" alt="Sea life">
       <div class="caption">sea life</div>
     </div>
-  <div class="back">
-      <img src="images/flower.jpg">
+    <div class="back">
+      <img src="images/flower.jpg" alt="Flower">
       <div class="caption">flower</div>
     </div>
-    <div class="page" style="z-index:2;">
-      
+  </div>
+
+  <div class="page" style="z-index: 7;">
     <div class="front">
-      <img src="images/snail.jpg">
+      <img src="images/snail.jpg" alt="Snail">
       <div class="caption">hi!</div>
     </div>
-  <div class="back">
-      <img src="images/bun.jpg">
+    <div class="back">
+      <img src="images/bun.jpg" alt="Bunny">
       <div class="caption">bunny</div>
     </div>
-      <div class="page" style="z-index:2;">
+  </div>
+
+  <div class="page" style="z-index: 6;">
     <div class="front">
-      <img src="images/dino.jpg">
+      <img src="images/dino.jpg" alt="Dinosaur">
       <div class="caption">old day</div>
     </div>
-  <div class="back">
-      <img src="images/snail2.jpg">
+    <div class="back">
+      <img src="images/snail2.jpg" alt="Skull snail">
       <div class="caption">skull snail</div>
     </div>
+  </div>
 
-  <div class="page" style="z-index:1;">
+
+  <div class="page" style="z-index: 5;">
     <div class="front">
-      <img src="images/Screenshot_22-4-2026_95124_.jpeg">
+      <img src="images/Screenshot_22-4-2026_95124_.jpeg" alt="At sea">
       <div class="caption">at sea</div>
     </div>
-    
-  <div class="page" style="z-index:1;">
     <div class="back">
-      <img src="images/lantern.jpg">
+      <img src="images/lantern.jpg" alt="Lantern">
       <div class="caption">light</div>
     </div>
-<div class="page" style="z-index:1;">
+  </div>
+
+
+  <div class="page" style="z-index: 4;">
     <div class="front">
-      <img src="images/Screenshot_22-4-2026_95124_.jpeg">
+      <img src="images/Screenshot_22-4-2026_95124_.jpeg" alt="At sea">
       <div class="caption">at sea</div>
     </div>
     <div class="back title-page">
@@ -214,30 +288,74 @@ small{
 
 </div>
 
+<div class="navigation">
+  <button id="prev">← Previous</button>
+  <span id="pageNumber">Cover</span>
+  <button id="next">Next →</button>
+</div>
+
+
+<div class="links">
+  <a href="index.html">home</a>
+  <a href="design.html">design</a>
+  <a href="photography.html">photo</a>
+  <a href="drawings.html">doodles</a>
+</div>
+
 <script>
 const pages = document.querySelectorAll(".page");
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+const pageNumber = document.getElementById("pageNumber");
 
-pages.forEach((page, index) => {
-  page.addEventListener("click", () => {
+let currentPage = 0;
 
-    // bring clicked page to front when flipping forward
-    if (!page.classList.contains("flipped")) {
-      page.style.zIndex = 100 + index;
+function updateBook() {
+  pages.forEach((page, index) => {
+    if (index < currentPage) {
       page.classList.add("flipped");
-    } 
-    else {
+      page.style.zIndex = index + 1;
+    } else {
       page.classList.remove("flipped");
-      page.style.zIndex = index;
+      page.style.zIndex = pages.length - index + 10;
     }
-
   });
-});
-</script>
 
-<a href="index.html">home</a> 
-<a href="design.html">design</a> 
-<a href="photography.html">photo</a> 
-<a href="drawings.html">doodles</a>
+  pageNumber.textContent =
+    currentPage === 0
+      ? "Cover"
+      : currentPage + " / " + pages.length;
+
+  prevBtn.disabled = currentPage === 0;
+  nextBtn.disabled = currentPage === pages.length;
+}
+
+nextBtn.addEventListener("click", () => {
+  if (currentPage < pages.length) {
+    currentPage++;
+    updateBook();
+  }
+});
+
+prevBtn.addEventListener("click", () => {
+  if (currentPage > 0) {
+    currentPage--;
+    updateBook();
+  }
+});
+
+
+document.getElementById("book").addEventListener("click", (event) => {
+  if (event.target.closest(".page")) {
+    if (currentPage < pages.length) {
+      currentPage++;
+      updateBook();
+    }
+  }
+});
+
+updateBook();
+</script>
 
 </body>
 </html>
